@@ -8,6 +8,7 @@ let
     ./alacritty.nix
 	./git.nix
     ./shell.nix
+	./tmux.nix
     ./neovim.nix
     ./starship.nix
   ];
