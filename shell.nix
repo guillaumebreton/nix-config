@@ -13,34 +13,32 @@ let
 		l = "exa";
 		ll = "ls -lh";
 		ls = "exa";
-	rm="trash";
+		rm="trash";
 
-	# git aliases
-	gst="git status";
-	gcm="git commit -m ";
-	gca="git commit --amend ";
-	gp="git push";
-	grh="git reset --hard head";
-	gri="git rebase -i";
-	gcapf="git add --all && gca && gpf";
-	gaa="git add --all";
-	gc ="git commit";
-	gco="git checkout";
-	gcp="git add --all && gc && gp";
-	grc="git rebase --continue";
-	pr="gh pr create ";
-	gpf="git push --force-with-lease";
+		# git aliases
+		gst="git status";
+		gcm="git commit -m ";
+		gca="git commit --amend ";
+		gp="git push";
+		grh="git reset --hard head";
+		gri="git rebase -i";
+		gcapf="git add --all && gca && gpf";
+		gaa="git add --all";
+		gc ="git commit";
+		gco="git checkout";
+		gcp="git add --all && gc && gp";
+		grc="git rebase --continue";
+		pr="gh pr create ";
+		gpf="git push --force-with-lease";
 
-	# go aliases
-	got="go test ./...";
-	goi="go install .";
-	gor="go run .";
-	gob="go build .";
+		# go aliases
+		got="go test ./...";
+		goi="go install .";
+		gor="go run .";
+		gob="go build .";
 
-	# tmux aliases
-	dev="cd ~/Workspaces && tmux";
-
-
+		# tmux aliases
+		dev="cd ~/Workspaces && tmux";
 
 		# Reload zsh
 		reload = "source ~/.zshrc";
