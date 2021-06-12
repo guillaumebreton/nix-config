@@ -13,6 +13,7 @@ let
 		l = "exa";
 		ll = "ls -lh";
 		ls = "exa";
+		tree="ls -T";
 		rm="trash";
 
 		# git aliases
