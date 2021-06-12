@@ -46,6 +46,7 @@ in {
 
   home.packages = with pkgs; [
 	  bat # Replacement for cat
+	  curl # good old curl
 	  direnv # Per-directory environment variables
 	  exa # Replacement for lds
 	  fd # Replacement for find
