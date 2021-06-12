@@ -79,11 +79,10 @@ in {
 				. ~/.nix-profile/etc/profile.d/nix.sh
 			fi
 
-			# Load environment variables from a file; this approach allows me to not
-			# commit secrets like API keys to Git
-			# if [ -e ~/.extras ]; then
-			#	. ~/.extras
-			# fi
+			# Load environment variables from a file;
+			if [ -e ~/.extras ]; then
+				. ~/.extras
+			 fi
 
 			# Start up Starship shell
 			eval "$(starship init zsh)"
@@ -93,9 +92,6 @@ in {
 
 			# direnv setup
 			eval "$(direnv hook zsh)"
-
-			# Load asdf
-			# . $HOME/.asdf/asdf.sh
 
 			# direnv hook
 			eval "$(direnv hook zsh)"
