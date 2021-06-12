@@ -25,9 +25,10 @@ let
 	gcapf="git add --all && gca && gpf";
 	gaa="git add --all";
 	gc ="git commit";
+	gco="git checkout";
 	gcp="git add --all && gc && gp";
 	grc="git rebase --continue";
-	pr="hub pull-request -b master -o ";
+	pr="gh pr create ";
 	gpf="git push --force-with-lease";
 
 	# go aliases
