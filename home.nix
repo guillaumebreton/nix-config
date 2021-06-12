@@ -8,9 +8,9 @@ let
     ./alacritty.nix
 	./git.nix
     ./shell.nix
+	./starship.nix
 	./tmux.nix
     ./neovim.nix
-    ./starship.nix
   ];
 
   gitTools = with pkgs.gitAndTools; [
