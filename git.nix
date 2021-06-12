@@ -3,9 +3,9 @@
 { config, lib, pkgs, ... }:
 
 let
-  vscode = pkgs.vscode;
+	vscode = pkgs.vscode;
 in {
-  programs.git = {
+	programs.git = {
 	package = pkgs.gitAndTools.gitFull;
 	enable = true;
 	userName = "Guillaume Breton";
@@ -13,16 +13,16 @@ in {
 
 	# Replaces ~/.gitignore
 	ignores = [
-	  ".cache/"
-	  ".DS_Store"
-	  ".idea/"
-	  "*.swp"
-	  "built-in-stubs.jar"
-	  "dumb.rdb"
-	  ".elixir_ls/"
-	  ".vscode/"
-	  "npm-debug.log"
-	  "shell.nix"
+		".cache/"
+		".DS_Store"
+		".idea/"
+		"*.swp"
+		"built-in-stubs.jar"
+		"dumb.rdb"
+		".elixir_ls/"
+		".vscode/"
+		"npm-debug.log"
+		"shell.nix"
 	];
 
 	# Replaces aliases in ~/.gitconfig
@@ -35,21 +35,21 @@ in {
 
 	# Global Git config
 	extraConfig = {
-	  core = {
+		core = {
 		editor = "nvim";
 		pager = "delta --dark";
 		whitespace = "trailing-space,space-before-tab";
-	  };
-	  push = {
-		  default = "current";
-		  followTags = "true";
-	  };
-	  branch = {
-		  autosetuprebase = "always";
-	  };
-	  rebase = {
-		  autosquash = "true";
-	  };
+		};
+		push = {
+			default = "current";
+			followTags = "true";
+		};
+		branch = {
+			autosetuprebase = "always";
+		};
+		rebase = {
+			autosquash = "true";
+		};
 	};
-  };
+	};
 }

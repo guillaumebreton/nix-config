@@ -3,16 +3,16 @@
 { config, lib, pkgs, ... }:
 
 let
-  # Set all shell aliases programatically
-  shellAliases = {
-    # Aliases for commonly used tools
-    grep = "rg";
-    diff = "diff --color=auto";
-    cat = "bat";
-    find = "fd";
-    l = "exa";
-    ll = "ls -lh";
-    ls = "exa";
+	# Set all shell aliases programatically
+	shellAliases = {
+		# Aliases for commonly used tools
+		grep = "rg";
+		diff = "diff --color=auto";
+		cat = "bat";
+		find = "fd";
+		l = "exa";
+		ll = "ls -lh";
+		ls = "exa";
 	rm="trash";
 
 	# git aliases
@@ -41,64 +41,64 @@ let
 
 
 
-    # Reload zsh
-    reload = "source ~/.zshrc";
+		# Reload zsh
+		reload = "source ~/.zshrc";
 
-    # Reload home manager and zsh
-    switch = "home-manager switch && source ~/.zshrc";
+		# Reload home manager and zsh
+		switch = "home-manager switch && source ~/.zshrc";
 
-    # Nix garbage collection
-    garbage = "nix-collect-garbage -d && docker image prune --force";
+		# Nix garbage collection
+		garbage = "nix-collect-garbage -d && docker image prune --force";
 
-    # See which Nix packages are installed
-    installed = "nix-env --query --installed";
-  };
+		# See which Nix packages are installed
+		installed = "nix-env --query --installed";
+	};
 in {
 
-  programs.fzf = {
-   enable = true;
-   enableBashIntegration = true;
-   defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
-  };
+	programs.fzf = {
+	 enable = true;
+	 enableBashIntegration = true;
+	 defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
+	};
 
-  # zsh settings
-  programs.zsh = {
-    inherit shellAliases;
-    enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    history.extended = true;
+	# zsh settings
+	programs.zsh = {
+		inherit shellAliases;
+		enable = true;
+		enableAutosuggestions = true;
+		enableCompletion = true;
+		history.extended = true;
 
-    # Called whenever zsh is initialized
-    initExtra = ''
-      export TERM="xterm-256color"
-      bindkey -e
+		# Called whenever zsh is initialized
+		initExtra = ''
+			export TERM="xterm-256color"
+			bindkey -e
 
-      # Nix setup (environment variables, etc.)
-      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-        . ~/.nix-profile/etc/profile.d/nix.sh
-      fi
+			# Nix setup (environment variables, etc.)
+			if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+				. ~/.nix-profile/etc/profile.d/nix.sh
+			fi
 
-      # Load environment variables from a file; this approach allows me to not
-      # commit secrets like API keys to Git
-      # if [ -e ~/.extras ]; then
-      #  . ~/.extras
-      # fi
+			# Load environment variables from a file; this approach allows me to not
+			# commit secrets like API keys to Git
+			# if [ -e ~/.extras ]; then
+			#	. ~/.extras
+			# fi
 
-      # Start up Starship shell
-      eval "$(starship init zsh)"
+			# Start up Starship shell
+			eval "$(starship init zsh)"
 
-      # Autocomplete for various utilities
-      source <(gh completion --shell zsh)
+			# Autocomplete for various utilities
+			source <(gh completion --shell zsh)
 
-      # direnv setup
-      eval "$(direnv hook zsh)"
+			# direnv setup
+			eval "$(direnv hook zsh)"
 
-      # Load asdf
-      # . $HOME/.asdf/asdf.sh
+			# Load asdf
+			# . $HOME/.asdf/asdf.sh
 
-      # direnv hook
-      eval "$(direnv hook zsh)"
-    '';
-  };
+			# direnv hook
+			eval "$(direnv hook zsh)"
+		'';
+	};
 }
