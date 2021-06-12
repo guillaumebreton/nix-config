@@ -28,6 +28,7 @@ let
 	gcp="git add --all && gc && gp";
 	grc="git rebase --continue";
 	pr="hub pull-request -b master -o ";
+	gpf="git push --force-with-lease";
 
 	# go aliases
 	got="go test ./...";
