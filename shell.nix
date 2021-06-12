@@ -7,21 +7,44 @@ let
   shellAliases = {
     # Aliases for commonly used tools
     grep = "rg";
-    just = "just --no-dotenv";
     diff = "diff --color=auto";
     cat = "bat";
     find = "fd";
     l = "exa";
     ll = "ls -lh";
     ls = "exa";
-    dk = "docker";
-    hms = "home-manager switch";
+	rm="trash";
+
+	# git aliases
+	gst="git status";
+	gcm="git commit -m ";
+	gca="git commit --amend ";
+	gp="git push";
+	grh="git reset --hard head";
+	gri="git rebase -i";
+	gcapf="git add --all && gca && gpf";
+	gaa="git add --all";
+	gc ="git commit";
+	gcp="git add --all && gc && gp";
+	grc="git rebase --continue";
+	pr="hub pull-request -b master -o ";
+
+	# go aliases
+	got="go test ./...";
+	goi="go install .";
+	gor="go run .";
+	gob="go build .";
+
+	# tmux aliases
+	dev="cd ~/Workspaces && tmux";
+
+
 
     # Reload zsh
     reload = "source ~/.zshrc";
 
     # Reload home manager and zsh
-    #reload = "home-manager switch && source ~/.zshrc";
+    switch = "home-manager switch && source ~/.zshrc";
 
     # Nix garbage collection
     garbage = "nix-collect-garbage -d && docker image prune --force";
@@ -31,16 +54,10 @@ let
   };
 in {
 
-  # fish shell settings
-  # programs.fish = {
-  #  inherit shellAliases;
-  #  enable = true;
-  # };
-
   programs.fzf = {
    enable = true;
    enableBashIntegration = true;
-   defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
+   defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
   };
 
   # zsh settings
@@ -71,28 +88,10 @@ in {
       eval "$(starship init zsh)"
 
       # Autocomplete for various utilities
-      # source <(helm completion zsh)
-      # source <(kubectl completion zsh)
-      # source <(linkerd completion zsh)
-      # source <(doctl completion zsh)
-      # source <(minikube completion zsh)
       source <(gh completion --shell zsh)
-      # rustup completions zsh > ~/.zfunc/_rustup
-      # source <(cue completion zsh)
-      # source <(npm completion zsh)
-      # source <(humioctl completion zsh)
-      # source <(fluxctl completion zsh)
 
       # direnv setup
       eval "$(direnv hook zsh)"
-
-      # Start up Docker daemon if not running
-      # if [ $(docker-machine status default) != "Running" ]; then
-      #  docker-machine start default
-      #fi
-
-      # Docker env
-      # eval "$(docker-machine env default)"
 
       # Load asdf
       # . $HOME/.asdf/asdf.sh
@@ -100,18 +99,5 @@ in {
       # direnv hook
       eval "$(direnv hook zsh)"
     '';
-
-    # Disable oh my zsh in favor of Starship shell
-    #oh-my-zsh = {
-    #  enable = true;
-    #  plugins = [
-    #    "docker"
-    #    "docker-compose"
-    #    "dotenv"
-    #    "git"
-    #    "sudo"
-    #  ];
-    #  theme = "muse";
-    #};
   };
 }
