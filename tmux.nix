@@ -27,7 +27,7 @@
 	  setw -g monitor-activity on
 	  set -g visual-activity on
 
-	  set -g renumber-windows o
+	  set -g renumber-windows on
 
 	  set -g set-clipboard on
 
@@ -54,10 +54,6 @@
 
 	  bind q confirm-before -p "kill-window #W? (y/n)" kill-window
 	  bind C-n next-window
-
-	  # force a reload of the config file
-	  unbind r
-      bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 	  # bind key for synchronizing panes
 	  bind-key y set-window-option synchronize-panes
