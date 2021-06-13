@@ -15,8 +15,9 @@
 				success_symbol = "[➜](bold green) ";
 				error_symbol = "[✗](bold red) ";
 		};
-			gcloud.disabled = true;
+		gcloud.disabled = true;
 		aws.disabled= true;
+		elixir.disabled=true;
 		};
 	};
 }
