@@ -55,6 +55,7 @@ in {
 		fd # Replacement for find
 		fzf # fuzzy finder
 		jq # JSON faster
+		nodejs # Runtime for frontent app and tools
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
