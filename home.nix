@@ -55,6 +55,8 @@ in {
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
+
+		earthly # a fast build tool
 	] ++ gitTools ;
 
 }
