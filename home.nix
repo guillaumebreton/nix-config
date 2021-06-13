@@ -48,6 +48,9 @@ in {
 		bat # Replacement for cat
 		curl # good old curl
 		direnv # Per-directory environment variables
+		earthly # a fast build tool
+		elixir # OTP with cool syntax
+    	erlang # OTP with weird syntax
 		exa # Replacement for lds
 		fd # Replacement for find
 		fzf # fuzzy finder
@@ -56,7 +59,6 @@ in {
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
 
-		earthly # a fast build tool
 	] ++ gitTools ;
 
 }
