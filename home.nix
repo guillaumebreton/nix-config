@@ -55,7 +55,7 @@ in {
 		fd # Replacement for find
 		fzf # fuzzy finder
 		jq # JSON faster
-		nodejs # Runtime for frontent app and tools
+		nodejs-16_x # Runtime for frontent app and tools
 		postgresql_13 # The best database on earth
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
