@@ -56,6 +56,7 @@ in {
 		fzf # fuzzy finder
 		jq # JSON faster
 		nodejs-16_x # Runtime for frontent app and tools
+		nodePackages.pnpm #Ultra fast npm alternative
 		postgresql_13 # The best database on earth
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
