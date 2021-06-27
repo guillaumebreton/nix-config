@@ -61,6 +61,7 @@ in {
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
+		qmk # firware setup
 
 	] ++ gitTools ;
 
