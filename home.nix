@@ -62,6 +62,7 @@ in {
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
 		qmk # firware setup
+		python39 # good old snake
 
 	] ++ gitTools ;
 
