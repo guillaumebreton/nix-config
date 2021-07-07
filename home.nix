@@ -6,10 +6,10 @@ let
 	# Import other Nix files
 	imports = [
 		./alacritty.nix
-	./git.nix
+		./git.nix
 		./shell.nix
-	./starship.nix
-	./tmux.nix
+		./starship.nix
+		./tmux.nix
 		./neovim.nix
 	];
 
