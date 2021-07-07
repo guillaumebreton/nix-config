@@ -61,14 +61,7 @@ in {
 		ripgrep # Replacement for grep
 		starship # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
-		python39
-		python39Packages.pip
-		qmk
-		dfu-util
-		dfu-programmer
-		avrdude
-		arm-none-eabi-gcc
-				avr-gcc
+		flyctl # command line for fly.io
 
 	] ++ gitTools ;
 
