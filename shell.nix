@@ -52,6 +52,9 @@ let
 
 		# See which Nix packages are installed
 		installed = "nix-env --query --installed";
+
+		# Flycl
+		fly = "flyctl"
 	};
 in {
 
