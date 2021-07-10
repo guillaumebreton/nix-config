@@ -54,7 +54,7 @@ let
 		installed = "nix-env --query --installed";
 
 		# Flycl
-		fly = "flyctl"
+		fly = "flyctl";
 	};
 in {
 
