@@ -17,6 +17,8 @@ let
 		rm="trash";
 
 		# git aliases
+		gs="git switch";
+		gr="git restore";
 		gst="git status";
 		gcm="git commit -m ";
 		gca="git commit --amend ";
