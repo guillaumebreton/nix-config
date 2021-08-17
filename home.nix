@@ -50,6 +50,7 @@ in {
 		direnv # Per-directory environment variables
 		elixir # OTP with cool syntax
     	erlang # OTP with weird syntax
+		go # The famous golang language
 		exa # Replacement for lds
 		fd # Replacement for find
 		fzf # fuzzy finder
