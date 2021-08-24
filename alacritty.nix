@@ -16,8 +16,8 @@
 		font = {
 			size = 12.0;
 			use_thin_strokes = true;
-			normal.family = "Fira code nerd font";
-			bold.family = "Fira code nerd font";
+			normal.family = "FiraCode Nerd Font";
+			bold.family = "FiraCode Nerd Font";
 		};
 	cursor.style = "Beam";
 	};
