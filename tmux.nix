@@ -15,7 +15,7 @@
 			set-option -g mouse on
 			set-option -g default-shell ''${SHELL}
 
-		set -g history-limit 500
+		set -g history-limit 10000
 
 		# start window index at 1
 		set -g base-index 1

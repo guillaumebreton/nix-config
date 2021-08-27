@@ -19,7 +19,10 @@
 			normal.family = "FiraCode Nerd Font";
 			bold.family = "FiraCode Nerd Font";
 		};
-	cursor.style = "Beam";
+		cursor.style = "Beam";
+		scrolling = {
+			history = 10000;
+		};
 	};
   };
 }
