@@ -38,27 +38,21 @@ in {
 		TERMINAL = "alacritty";
 	};
 
-	programs.go.enable = true;
+	# programs.go.enable = true;
 
 	home.packages = with pkgs; [
 		bat # Replacement for cat
 		curl # good old curl
-		direnv # Per-directory environment variables
-		elixir # OTP with cool syntax
-    	erlang # OTP with weird syntax
-		go # The famous golang language
+		(lib.lowPrio go) # The famous golang language
 		exa # Replacement for lds
 		fd # Replacement for find
-		fzf # fuzzy finder
+		(lib.lowPrio fzf) # fuzzy finder
 		jq # JSON faster
 		nodejs-16_x # Runtime for frontent app and tools
-		nodePackages.pnpm #Ultra fast npm alternative
 		postgresql_13 # The best database on earth
 		ripgrep # Replacement for grep
-		starship # Fancy shell that works with zsh
+		 (lib.lowPrio starship) # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
-		flyctl # command line for fly.io
-
 	] ++ gitTools ;
 
 }
