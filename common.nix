@@ -25,7 +25,6 @@ in {
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 
-
 	home.stateVersion = "21.11";
 
 	nixpkgs.config = {

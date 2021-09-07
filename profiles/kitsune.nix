@@ -17,4 +17,7 @@ in {
 	home.username = "guillaumebreton";
 	home.homeDirectory = "/Users/guillaumebreton";
 
+	programs.neovim = {
+		enable = true;
+	};
 }

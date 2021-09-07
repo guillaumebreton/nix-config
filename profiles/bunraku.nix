@@ -17,13 +17,16 @@ in {
 	home.username = "guillaume";
 	home.homeDirectory = "/Users/guillaume";
 
-	home.packages = home.packages [
+	programs.neovim = {
+		enable = true;
+	};
+
+	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
-		neovim # better vim
     	erlang # OTP with weird syntax
 		elixir # OTP with cool syntax
 		nodePackages.pnpm #Ultra fast npm alternative
 		flyctl # command line for fly.io
-	]  ;
+	];
 
 }
