@@ -42,7 +42,7 @@ in {
 	home.packages = with pkgs; [
 		bat # Replacement for cat
 		curl # good old curl
-		(lib.lowPrio go) # The famous golang language
+		go # The famous golang language
 		exa # Replacement for lds
 		fd # Replacement for find
 		(lib.lowPrio fzf) # fuzzy finder
@@ -50,7 +50,7 @@ in {
 		nodejs-16_x # Runtime for frontent app and tools
 		postgresql_13 # The best database on earth
 		ripgrep # Replacement for grep
-		 (lib.lowPrio starship) # Fancy shell that works with zsh
+		(lib.lowPrio starship) # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
 	] ++ gitTools ;
 
