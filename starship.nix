@@ -18,6 +18,9 @@
 		gcloud.disabled = true;
 		aws.disabled= true;
 		elixir.disabled=true;
+		ruby.disabled=true;
+		python.disabled=true;
+
 		};
 	};
 }
