@@ -52,6 +52,7 @@ in {
 		ripgrep # Replacement for grep
 		(lib.lowPrio starship) # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
+
 	] ++ gitTools ;
 
 }
