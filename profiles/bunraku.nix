@@ -27,6 +27,9 @@ in {
 		elixir # OTP with cool syntax
 		nodePackages.pnpm #Ultra fast npm alternative
 		flyctl # command line for fly.io
+		pscale # the cli for pscale database
+		mysql # my sql command line
+
 	];
 
 }
