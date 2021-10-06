@@ -17,7 +17,12 @@ in {
 	home.username = "guillaumebreton";
 	home.homeDirectory = "/Users/guillaumebreton";
 
+
 	programs.neovim = {
 		enable = true;
 	};
+
+	home.packages = with pkgs; [
+		bash # install bash 4 sozsh-nix-shell works correctly
+	];
 }
