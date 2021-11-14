@@ -29,7 +29,8 @@ in {
 		flyctl # command line for fly.io
 		pscale # the cli for pscale database
 		mysql # my sql command line
-
+		nodePackages.vercel
+		yarn
 	];
 
 }
