@@ -30,7 +30,9 @@ in {
 		pscale # the cli for pscale database
 		mysql # my sql command line
 		nodePackages.vercel
-		yarn
+		yarn 	# yarn
+		nodePackages.lerna # lerna is a package manager for Nix
+
 	];
 
 }
