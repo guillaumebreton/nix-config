@@ -32,6 +32,7 @@ in {
 		nodePackages.vercel
 		yarn 	# yarn
 		nodePackages.lerna # lerna is a package manager for Nix
+		nodejs # nodejs
 
 	];
 
