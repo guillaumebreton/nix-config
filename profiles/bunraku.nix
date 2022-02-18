@@ -33,7 +33,9 @@ in {
 		yarn 	# yarn
 		nodePackages.lerna # lerna is a package manager for Nix
 		nodejs # nodejs
-
+		jo # jo is a JSON tool
+		tokei # tokei is a tool to count lines of code
+		jless # jless is a tool to display JSON
 	];
 
 }
