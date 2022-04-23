@@ -52,6 +52,8 @@ in {
 		(lib.lowPrio starship) # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
 		ouch # zip, tar replacement
+		coreutils # The best unix utilities
+		dateutils # Date utilities
 
 	] ++ gitTools ;
 
