@@ -53,7 +53,7 @@ in {
 		ouch # zip, tar replacement
 		coreutils # The best unix utilities
 		dateutils # Date utilities
-
+		taskwarrior
 	] ++ gitTools ;
 
 }
