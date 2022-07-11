@@ -1,0 +1,47 @@
+# [Created by task 2.3.0 12/3/2014 10:33:25]
+# Taskwarrior program configuration file.
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+include ~/.task.theme
+
+
+report.ls.sort=status-,start-,segment-/,priority-,project+,estimate-,due+
+report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
+report.ls.columns=id,segment,project,estimate,description
+report.ls.labels= ID,Seg,Proj,Est,Description
+
+report.tomorrow.columns=id,segment,project,estimate,description
+report.tomorrow.filter=status:pending and due:tomorrow or status:pending and sched:tomorrow or status:pending and +OVERDUE
+report.tomorrow.sort=status-,segment-/,start-,priority-,project+,estimate-,due+
+report.tomorrow.labels= ID,Seg,Proj,Est,Description
+
+report.list.sort=project+,due+,scheduled+,priority-,start-,estimate+
+report.list.columns=id,project,priority,tags,estimate,due,scheduled,description
+report.list.labels= ID,Proj,Pri,Tags,Est,Due,Sched,Description
+report.next.filter=status:pending and sched:
+report.next.columns=id,project,priority,scheduled,description
+report.next.labels= ID,Proj,Pri,Sched,Description
+report.week.columns=id,project,priority,scheduled,description
+report.week.filter=sched>= socw and sched<=eocw
+report.week.sort=scheduled+
+default.command=ls
+weekstart=monday
+
+editor=nvim
+uda.estimate.type=numeric
+uda.estimate.label=Est
+
+uda.segment.type=string
+uda.segment.label=Seg
+uda.segment.values=M,A,E
+news.version=2.6.0

@@ -37,8 +37,11 @@ in {
 		TERMINAL = "alacritty";
 	};
 
-	# programs.go.enable = true;
+	# Write the files
+	home.file.".taskrc".source = ./config/.taskrc;
+	home.file.".task.theme".source = ./config/.task.theme;
 
+	# programs.go.enable = true;
 	home.packages = with pkgs; [
 		bat # Replacement for cat
 		curl # good old curl
@@ -54,6 +57,7 @@ in {
 		coreutils # The best unix utilities
 		dateutils # Date utilities
 		taskwarrior
+		taskwarrior-tui
 	] ++ gitTools ;
 
 }

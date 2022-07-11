@@ -60,6 +60,14 @@ let
 
 		# Nix-shell
 		ns = "nix-shell shell.nix";
+
+		# task
+
+		t= "task ls";
+		tw="task week";
+		tn="task next";
+		tm="task tomorrow";
+		tl="task list";
 	};
 in {
 
@@ -103,6 +111,30 @@ in {
 
 			# direnv hook
 			eval "$(direnv hook zsh)"
+
+
+			te(){
+				task $1 edit
+			}
+
+			td(){
+				task $1 mod sched:today
+			}
+
+			ts(){
+				task $1 start
+			}
+
+			tt(){
+				task $1 mod sched:$2
+			}
+			tad(){
+				task add $@ sched:today
+			}
+
+			tp(){
+				task $@ mod due: sched:tomorrow
+			}
 		'';
 		plugins = [
 			{
