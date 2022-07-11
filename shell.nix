@@ -59,7 +59,7 @@ let
 		fly = "flyctl";
 
 		# Nix-shell
-		ns = "nix-shell";
+		ns = "nix-shell shell.nix";
 	};
 in {
 

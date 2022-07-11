@@ -23,12 +23,8 @@ in {
 
 	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
-    	erlang # OTP with weird syntax
-		elixir # OTP with cool syntax
 		nodePackages.pnpm #Ultra fast npm alternative
-		flyctl # command line for fly.io
 		pscale # the cli for pscale database
-		mysql # my sql command line
 		nodePackages.vercel
 		yarn 	# yarn
 		nodePackages.lerna # lerna is a package manager for Nix
@@ -36,6 +32,30 @@ in {
 		jo # jo is a JSON tool
 		tokei # tokei is a tool to count lines of code
 		jless # jless is a tool to display JSON
+		bash
+
+
+		# nerves deployment
+		fwup
+		squashfsTools
+		coreutils-prefixed
+		xz
+		pkg-config
+
+		autoconf
+		automake
+		curl
+		erlangR24
+		fwup
+		pkgs.beam.packages.erlangR24.elixir
+		rebar3
+		squashfsTools
+		x11_ssh_askpass
+		zstd
+
+
+		# temporary
+		flyctl
 	];
 
 }

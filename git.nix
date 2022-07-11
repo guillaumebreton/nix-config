@@ -22,7 +22,6 @@ in {
 			".elixir_ls/"
 			".vscode/"
 			"npm-debug.log"
-			"shell.nix"
 		];
 
 		# Replaces aliases in ~/.gitconfig

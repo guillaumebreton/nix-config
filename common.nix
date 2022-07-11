@@ -47,7 +47,6 @@ in {
 		fd # Replacement for find
 		(lib.lowPrio fzf) # fuzzy finder
 		jq # JSON faster
-		postgresql_13 # The best database on earth
 		ripgrep # Replacement for grep
 		(lib.lowPrio starship) # Fancy shell that works with zsh
 		trash-cli # a replacement for rm
