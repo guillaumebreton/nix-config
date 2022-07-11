@@ -44,4 +44,6 @@ uda.estimate.label=Est
 uda.segment.type=string
 uda.segment.label=Seg
 uda.segment.values=M,A,E
+
+uda.priority.default=L
 news.version=2.6.0

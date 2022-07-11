@@ -31,7 +31,7 @@ color.calendar.holiday=color0 on color11
 color.calendar.weeknumber=rgb013
 
 color.recurring=
-color.overdue=white on red
+color.overdue=red
 color.completed=rgb111
 color.due.today=
 color.due=
@@ -46,6 +46,6 @@ color.alternate=white on rgb000
 color.scheduled=
 color.label=
 
-color.uda.priority.H=red
-color.uda.priority.L=grey15
-color.uda.priority.M=yellow
+color.uda.priority.H=yellow
+color.uda.priority.L=white
+color.uda.priority.M=color4
