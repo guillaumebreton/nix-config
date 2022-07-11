@@ -17,8 +17,8 @@ include ~/.task.theme
 
 report.ls.sort=status-,start-,segment-/,priority-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
-report.ls.columns=id,segment,project,estimate,description
-report.ls.labels= ID,Seg,Proj,Est,Description
+report.ls.columns=id,segment,estimate,project,description
+report.ls.labels= ID,Seg,Est,Proj,Description
 
 report.tomorrow.columns=id,segment,project,estimate,description
 report.tomorrow.filter=status:pending and due:tomorrow or status:pending and sched:tomorrow or status:pending and +OVERDUE
@@ -38,8 +38,9 @@ default.command=ls
 weekstart=monday
 
 editor=nvim
-uda.estimate.type=numeric
+uda.estimate.type=string
 uda.estimate.label=Est
+uda.estimage.value=L,M,S
 
 uda.segment.type=string
 uda.segment.label=Seg
