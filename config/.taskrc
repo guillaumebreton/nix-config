@@ -32,7 +32,7 @@ report.next.filter=status:pending and sched:
 report.next.columns=id,project,priority,scheduled,description
 report.next.labels= ID,Proj,Pri,Sched,Description
 report.week.columns=id,project,priority,scheduled,description
-report.week.filter=sched>= socw and sched<=eocw
+report.week.filter=sched.after:sow and sched.before:eow+1day
 report.week.sort=scheduled+
 default.command=ls
 weekstart=monday
