@@ -16,7 +16,6 @@ let
 	gitTools = with pkgs.gitAndTools; [
 		delta
 		diff-so-fancy
-		gh
 	];
 
 in {

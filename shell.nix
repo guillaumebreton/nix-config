@@ -31,7 +31,6 @@ let
 		gco="git checkout";
 		gcp="git add --all && gc && gp";
 		grc="git rebase --continue";
-		pr="gh pr create ";
 		gpf="git push --force-with-lease";
 
 		# go aliases
@@ -102,9 +101,6 @@ in {
 
 			# Start up Starship shell
 			eval "$(starship init zsh)"
-
-			# Autocomplete for various utilities
-			source <(gh completion --shell zsh)
 
 			# direnv setup
 			eval "$(direnv hook zsh)"
