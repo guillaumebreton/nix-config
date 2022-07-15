@@ -14,6 +14,10 @@ data.location=~/.task
 # Color theme (uncomment one to use)
 include ~/.task.theme
 
+default.command=ls
+weekstart=monday
+editor=nvim
+
 
 report.ls.sort=status-,start-,segment-/,priority-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
@@ -28,16 +32,18 @@ report.tomorrow.labels= ID,Seg,Proj,Est,Description
 report.list.sort=project+,due+,scheduled+,priority-,start-,estimate+
 report.list.columns=id,project,priority,tags,estimate,due,scheduled,description
 report.list.labels= ID,Proj,Pri,Tags,Est,Due,Sched,Description
+
+# Next report
 report.next.filter=status:pending and sched:
 report.next.columns=id,project,priority,scheduled,description
 report.next.labels= ID,Proj,Pri,Sched,Description
-report.week.columns=id,project,priority,scheduled,description
-report.week.filter=sched.after:sow and sched.before:eow+1day
-report.week.sort=scheduled+
-default.command=ls
-weekstart=monday
 
-editor=nvim
+# Week report
+report.week.columns=id,project,priority,scheduled,description
+report.week.filter=sched.after:sow and sched.before:eow+1day status:pending
+report.week.sort=scheduled+
+
+
 uda.estimate.type=string
 uda.estimate.label=Est
 uda.estimage.value=L,M,S
