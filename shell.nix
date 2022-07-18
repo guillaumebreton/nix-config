@@ -64,7 +64,6 @@ let
 
 		t= "task ls";
 		tw="task week";
-		tn="task next";
 		tm="task tomorrow";
 		tl="task list";
 	};
@@ -108,13 +107,16 @@ in {
 			# direnv hook
 			eval "$(direnv hook zsh)"
 
-
 			te(){
 				task $1 edit
 			}
 
 			td(){
 				task $1 mod sched:today
+			}
+
+			tn(){
+				task $1 mod +next
 			}
 
 			ts(){
@@ -124,6 +126,7 @@ in {
 			tt(){
 				task $1 mod sched:$2
 			}
+
 			tad(){
 				task add $@ sched:today
 			}
