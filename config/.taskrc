@@ -40,7 +40,7 @@ report.next.labels= ID,Proj,Pri,Sched,Description
 
 # Week report
 report.week.columns=id,project,priority,scheduled,description
-report.week.filter=sched.after:sow and sched.before:eow+1day status:pending
+report.week.filter=sched.after:yesterday and sched.before:eow+1day status:pending
 report.week.sort=scheduled+
 
 
