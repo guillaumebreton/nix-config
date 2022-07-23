@@ -51,6 +51,7 @@ uda.estimage.value=L,M,S
 uda.segment.type=string
 uda.segment.label=Seg
 uda.segment.values=M,A,E
+uda.segment.default=M
 
 uda.priority.default=L
 news.version=2.6.0
