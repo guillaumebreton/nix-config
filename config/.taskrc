@@ -43,10 +43,9 @@ report.week.columns=id,project,priority,scheduled,description
 report.week.filter=sched.after:yesterday and sched.before:eow+1day status:pending
 report.week.sort=scheduled+
 
-
 uda.estimate.type=string
 uda.estimate.label=Est
-uda.estimage.value=L,M,S
+uda.estimate.value=L,M,S
 
 uda.segment.type=string
 uda.segment.label=Seg
@@ -54,4 +53,5 @@ uda.segment.values=M,A,E
 uda.segment.default=M
 
 uda.priority.default=L
+uda.priority.values=H,L
 news.version=2.6.0
