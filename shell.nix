@@ -69,6 +69,11 @@ let
 		tsa="tsa() {task $1 mod seg:A};tsa";
 		tsm="tsm() {task $1 mod seg:M};tsm";
 		tse="tse() {task $1 mod seg:E};tse";
+		te="te() {task $1 edit};te";
+		td="td() {task $1 mod sched:today};td";
+		tn="tn() {task $1 mod +next};tn";
+		ts="ts() {task $1 start};ts";
+		tt="tt() {task $1 mod sched:$2};tt";
 	};
 in {
 
@@ -110,25 +115,7 @@ in {
 			# direnv hook
 			eval "$(direnv hook zsh)"
 
-			te(){
-				task $1 edit
-			}
 
-			td(){
-				task $1 mod sched:today
-			}
-
-			tn(){
-				task $1 mod +next
-			}
-
-			ts(){
-				task $1 start
-			}
-
-			tt(){
-				task $1 mod sched:$2
-			}
 
 			tad(){
 				hour=`date +%H`
