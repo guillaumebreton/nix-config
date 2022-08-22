@@ -66,6 +66,9 @@ let
 		tw="task week";
 		tm="task tomorrow";
 		tl="task list";
+		tsa="tsa() {task $1 mod seg:A};tsa";
+		tsm="tsm() {task $1 mod seg:M};tsm";
+		tse="tse() {task $1 mod seg:E};tse";
 	};
 in {
 
@@ -128,7 +131,16 @@ in {
 			}
 
 			tad(){
-				task add $@ sched:today
+				hour=`date +%H`
+				if [[ $hour -lt 12 ]]
+				then
+					task add $@ sched:today seg:M
+				elif [[ $hour -lt 18 ]]
+				then
+					task add $@ sched:today seg:A
+				else
+					task add $@ sched:today seg:E
+				fi
 			}
 
 			tp(){
