@@ -18,7 +18,7 @@ default.command=ls
 weekstart=monday
 editor=nvim
 
-report.ls.sort=status-,start-,segment-/,priority-,urgency-,project+,estimate-,due+
+report.ls.sort=status-,start-,segment-/,urgency-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
 report.ls.columns=id,segment,estimate,project,description
 report.ls.labels= ID,Seg,Est,Proj,Description
@@ -53,4 +53,6 @@ uda.segment.default=M
 
 uda.priority.default=L
 uda.priority.values=H,L
+urgency.uda.priority.H.coefficient=30.0
+urgency.uda.priority.L.coefficient=1.0
 news.version=2.6.0
