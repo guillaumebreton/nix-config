@@ -23,6 +23,8 @@ in {
 	};
 
 	home.packages = with pkgs; [
-		bash # install bash 4 sozsh-nix-shell works correctly
+		bash # install bash 4 so zsh-nix-shell works correctly
+		direnv
+		rbenv
 	];
 }

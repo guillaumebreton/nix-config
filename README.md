@@ -14,4 +14,6 @@ To use these configs yourself as a starter:
 3. cd ~/.config
 4. rm -rf nixpkgs
 5. git clone https://github.com/guillaumebreton/nix-home-config nixpkgs
-6. home-manager switch && source ~/.zshrc
+6. Link 
+7. Set shell
+8. home-manager switch && source ~/.zshrc
