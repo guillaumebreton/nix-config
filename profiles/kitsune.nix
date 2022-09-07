@@ -26,5 +26,7 @@ in {
 		bash # install bash 4 so zsh-nix-shell works correctly
 		direnv
 		rbenv
+		bundler
+		aws
 	];
 }
