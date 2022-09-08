@@ -27,6 +27,6 @@ in {
 		direnv
 		rbenv
 		bundler
-		aws
+		awscli2
 	];
 }
