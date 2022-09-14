@@ -28,5 +28,20 @@ in {
 		rbenv
 		bundler
 		awscli2
+		enscript
+		yq
+		libyaml
+		rsync
+		coreutils
+		watchman
+		diffutils
+		findutils
+		moreutils
+		gnutar
+		gnused
+		gawk
+		xz
+
+
 	];
 }
