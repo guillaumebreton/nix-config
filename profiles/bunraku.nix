@@ -54,9 +54,10 @@ in {
 		x11_ssh_askpass
 		zstd
 
-
+		postgresql
 		# temporary
 		flyctl
+
 	];
 
 }
