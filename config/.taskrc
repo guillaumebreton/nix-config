@@ -16,7 +16,7 @@ include ~/.task.theme
 
 default.command=ls
 weekstart=monday
-editor=nvim
+editor=hx
 
 report.ls.sort=status-,start-,segment-/,urgency-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
