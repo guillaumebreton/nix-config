@@ -10,3 +10,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+"D" = "kill_to_line_end" # Maps Control-Shift-Escape to extend_line
