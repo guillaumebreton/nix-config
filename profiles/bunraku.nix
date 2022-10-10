@@ -23,9 +23,7 @@ in {
 
 	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
-		nodePackages.pnpm #Ultra fast npm alternative
 		pscale # the cli for pscale database
-		nodePackages.vercel
 		yarn 	# yarn
 		# nodePackages.node-gyp-build
 		# nodePackages.lerna # lerna is a package manager for Nix
@@ -34,7 +32,12 @@ in {
 		tokei # tokei is a tool to count lines of code
 		jless # jless is a tool to display JSON
 		bash
-		nodePackages.node-gyp-build
+		helix # editor
+
+
+		# temp dev
+		nodePackages.vercel
+		nodePackages.pnpm #Ultra fast npm alternative
 
 
 		# nerves deployment
