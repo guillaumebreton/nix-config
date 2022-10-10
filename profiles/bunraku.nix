@@ -32,7 +32,6 @@ in {
 		tokei # tokei is a tool to count lines of code
 		jless # jless is a tool to display JSON
 		bash
-		helix # editor
 
 
 		# temp dev

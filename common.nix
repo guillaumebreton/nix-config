@@ -11,6 +11,8 @@ let
 		./starship.nix
 		./tmux.nix
 		./neovim.nix
+		./helix.nix
+		./taskwarrior.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
@@ -32,13 +34,10 @@ in {
 	};
 
 	home.sessionVariables = {
-		EDITOR = "nvim";
+		EDITOR = "helix";
 		TERMINAL = "alacritty";
 	};
 
-	# Write the files
-	home.file.".taskrc".source = ./config/.taskrc;
-	home.file.".task.theme".source = ./config/.task.theme;
 
 	# programs.go.enable = true;
 	home.packages = with pkgs; [
@@ -46,7 +45,7 @@ in {
 		curl # good old curl
 		go # The famous golang language
 		exa # Replacement for lds
-		fd # Replacement for find
+		fd # Replacement for finx d
 		(lib.lowPrio fzf) # fuzzy finder
 		jq # JSON faster
 		ripgrep # Replacement for grep
@@ -57,6 +56,7 @@ in {
 		dateutils # Date utilities
 		taskwarrior
 		taskwarrior-tui
+		helix
 	] ++ gitTools ;
 
 }
