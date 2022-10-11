@@ -2,6 +2,7 @@ theme = "bogster"
 
 [editor]
 line-number = "relative"
+cursorline = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,3 +15,8 @@ hidden = false
 [keys.normal]
 "D" = "kill_to_line_end" # Maps Control-Shift-Escape to extend_line
 "V" = "extend_line_below"
+j = ["move_line_down", "align_view_center"]
+k = ["move_line_up", "align_view_center"]
+
+[editor.indent-guides]
+render = true
