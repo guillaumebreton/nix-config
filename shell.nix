@@ -61,7 +61,6 @@ let
 		ns = "nix-shell shell.nix";
 
 		# task
-
 		t= "task ls";
 		tw="task week";
 		tm="task tomorrow";
@@ -74,6 +73,10 @@ let
 		tn="tn() {task $1 mod +next};tn";
 		ts="ts() {task $1 start};ts";
 		tt="tt() {task $1 mod sched:$2};tt";
+		
+		
+		# nnn
+		n="nnn";
 	};
 in {
 

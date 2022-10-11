@@ -54,9 +54,9 @@ in {
 		ouch # zip, tar replacement
 		coreutils # The best unix utilities
 		dateutils # Date utilities
-		taskwarrior
-		taskwarrior-tui
-		helix
+		taskwarrior # Task management tooling
+		helix # Awesome editor to replace nvim
+		nnn # file explorer
 	] ++ gitTools ;
 
 }
