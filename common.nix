@@ -5,14 +5,14 @@ let
 
 	# Import other Nix files
 	imports = [
-		./alacritty.nix
-		./git.nix
-		./shell.nix
-		./starship.nix
-		./tmux.nix
-		./neovim.nix
-		./helix.nix
-		./taskwarrior.nix
+		./modules/alacritty.nix
+		./modules/git.nix
+		./modules/shell.nix
+		./modules/starship.nix
+		./modules/tmux.nix
+		./modules/neovim.nix
+		./modules/helix.nix
+		./modules/taskwarrior.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
