@@ -6,6 +6,9 @@ let
 	# Import other Nix files
 	imports = [
 		../common.nix
+		../modules/golang.nix
+		../modules/rust.nix
+		../modules/typescript.nix
 	];
 
 in {
@@ -38,10 +41,6 @@ in {
 		nodePackages.vercel
 		nodePackages.pnpm #Ultra fast npm alternative
 		
-		# langage servers
-		nodePackages.typescript-language-server
-
-
 		# nerves deployment
 		fwup
 		squashfsTools

@@ -58,9 +58,6 @@ in {
 		helix # Awesome editor to replace nvim
 		nnn # file explorer
 		
-		# language server
-		gopls # Golang language server
-		delve # Golang debugger
 	] ++ gitTools ;
 
 }
