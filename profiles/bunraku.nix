@@ -37,6 +37,9 @@ in {
 		# temp dev
 		nodePackages.vercel
 		nodePackages.pnpm #Ultra fast npm alternative
+		
+		# langage servers
+		nodePackages.typescript-language-server
 
 
 		# nerves deployment
