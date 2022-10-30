@@ -1,4 +1,3 @@
-{config, pkgs, libs, ...}:
-{
-    programs.home-manager.enable = true;
+{ pkgs, ... }: {
+  programs.home-manager.enable = true;
 }
