@@ -5,7 +5,7 @@ let
 
 	# Import other Nix files
 	imports = [
-		../common.nix
+		../modules/common.nix
 	];
 
 in {

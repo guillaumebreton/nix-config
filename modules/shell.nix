@@ -46,7 +46,9 @@ let
 		reload = "source ~/.zshrc";
 
 		# Reload home manager and zsh
-		switch = "home-manager switch && source ~/.zshrc";
+		# until https://github.com/nix-community/home-manager/issues/2848 is fixed
+		# switch = "home-manager switch && source ~/.zshrc";
+		switch = "nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage && \"$(nix path-info ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage)\"/activate && source ~/.zshrc";
 
 		# Nix garbage collection
 		garbage = "nix-collect-garbage -d && docker image prune --force";
@@ -73,8 +75,8 @@ let
 		tn="tn() {task $1 mod +next};tn";
 		ts="ts() {task $1 start};ts";
 		tt="tt() {task $1 mod sched:$2};tt";
-		
-		
+
+
 		# nnn
 		n="nnn";
 	};

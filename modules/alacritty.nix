@@ -15,7 +15,7 @@
 		};
 		font = {
 			size = 12.0;
-			use_thin_strokes = true;
+			# use_thin_strokes = true;
 			normal.family = "FiraCode Nerd Font";
 			bold.family = "FiraCode Nerd Font";
 		};
