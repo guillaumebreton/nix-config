@@ -42,4 +42,9 @@ home-manager switch --flake <directory>#$(hostname -s)
 
 # Trouble shooting
 
-- If you accidently remove home-manager from nix profile: nix profile install home-manager
+- If you ever break your shell, open a regular terminal, remove the .zshrc from your repository and run
+
+```
+nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage && $(nix path-info ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage)\"/activate && source ~/.zshrc;
+
+```
