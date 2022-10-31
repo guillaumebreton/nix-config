@@ -4,7 +4,13 @@ Nix/Home manager configuration for my hosts.
 
 # Debts
 
-This config is heavily indebted to lucperkins/nix-home-config.
+This config is heavily indebted to
+
+- lucperkins/nix-home-config.
+- https://www.youtube.com/watch?v=KJgN0lnA5mk
+- https://gist.github.com/jmatsushita/5c50ef14b4b96cb24ae5268dab613050
+- https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
+- https://www.youtube.com/watch?v=1dzgVkgQ5mE
 
 # Install
 

@@ -11,13 +11,9 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    {
       homeConfigurations.bunraku = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
+        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
         modules = [
           ./profiles/bunraku.nix
         ];
