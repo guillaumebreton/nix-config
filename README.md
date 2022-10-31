@@ -16,6 +16,13 @@ To use these configs yourself as a starter:
 curl -L https://nixos.org/nix/install | sh
 ```
 
+2. Enable flakes
+
+```
+# add the following line to ~/.config/nix/nix.conf
+experimental-features = nix-command flakes
+```
+
 2. Install Home Manager
 
 ```
