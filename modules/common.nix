@@ -11,7 +11,6 @@ let
 		./starship.nix
 		./tmux.nix
 		./helix.nix
-		./taskwarrior.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
