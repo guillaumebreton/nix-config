@@ -23,7 +23,7 @@ curl -L https://nixos.org/nix/install | sh
 experimental-features = nix-command flakes
 ```
 
-2. Install Home Manager
+3. Install Home Manager
 
 ```
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
@@ -32,11 +32,12 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 nix-shell '<home-manager>' -A install
 ```
 
-3. Install the [FiraCode nerd font](https://www.nerdfonts.com/)
-4. Run
+4. Install the [FiraCode nerd font](https://www.nerdfonts.com/)
+5. Clone the repository
+6. Run
 
 ```
-home-manager home-manager switch --flake https://github.com/guillaumebreton/nix-home-config#{hostname}
+home-manager switch --flake <directory>#$(hostname -s)
 ```
 
 # Trouble shooting
