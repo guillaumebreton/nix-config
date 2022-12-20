@@ -48,6 +48,12 @@ home-manager switch --flake <directory>#$(hostname -s)
 
 # Trouble shooting
 
+- Upgrade nix
+
+```
+sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remove org.nixos.nix-daemon && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
+```
+
 - If you ever break your shell, open a regular terminal, remove the .zshrc from your repository and run
 
 ```

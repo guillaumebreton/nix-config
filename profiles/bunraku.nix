@@ -36,6 +36,9 @@ in {
 		postgresql
 
 
+		zola
+
+
 
 
 		# nodePackages.node-gyp-build
