@@ -43,10 +43,18 @@ nix-shell '<home-manager>' -A install
 6. Run
 
 ```
-home-manager switch --flake <directory>#$(hostname -s)
+home-manager switch --flake .#$(hostname -s)
+cd ~/Workspaces/nix-config && home-manager switch --flake .#bunraku
 ```
 
 # Trouble shooting
+
+- Update the dependencies
+
+```
+nix flake update
+# then build again
+```
 
 - Upgrade nix
 
@@ -57,6 +65,6 @@ sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remo
 - If you ever break your shell, open a regular terminal, remove the .zshrc from your repository and run
 
 ```
-nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage && $(nix path-info ~/.config/nixpkgs#homeConfigurations.bunraku.activationPackage)\"/activate && source ~/.zshrc;
+nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && \"$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)\"/activate && source ~/.zshrc
 
 ```

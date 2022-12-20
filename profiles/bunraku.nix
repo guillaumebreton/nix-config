@@ -36,8 +36,8 @@ in {
 		postgresql
 
 
-		zola
 
+		zola
 
 
 
