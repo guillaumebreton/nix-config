@@ -34,10 +34,11 @@ in {
 		bash
 		flyctl
 		postgresql
+		nodejs-16_x
+    	nodePackages.eslint_d
+        nodePackages.typescript-language-server
+        nodePackages.typescript
 
-
-
-		zola
 
 
 
