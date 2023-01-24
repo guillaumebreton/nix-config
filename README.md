@@ -68,3 +68,16 @@ sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && launchctl remo
 nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && \"$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)\"/activate && source ~/.zshrc
 
 ```
+
+- If MacOSX break the configuration
+
+```
+sudo vi /etc/zshrc
+
+at this at the end
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+```
