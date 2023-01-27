@@ -39,6 +39,8 @@ in {
         nodePackages.typescript-language-server
         nodePackages.typescript
 
+		ledger
+
 
 
 
