@@ -5,8 +5,16 @@
         source = ../config/nvim;
         target = "nvim";
     };
-	home.packages = with pkgs; [
-	    neovim
-		vimPlugins.packer-nvim
-	];
+
+    programs.neovim = {
+        viAlias = true;
+        vimAlias = true;
+    };
+   	programs.neovim.plugins = [
+  pkgs.vimPlugins.nvim-tree-lua
+  {
+    plugin = pkgs.vimPlugins.vim-startify;
+    config = "let g:startify_change_to_vcs_root = 0";
+  }
+];
 }
