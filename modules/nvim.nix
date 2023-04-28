@@ -8,6 +8,7 @@
 	home.packages = with pkgs; [
 	    neovim
 		vimPlugins.packer-nvim
+		telescope-fzf-native-nvim
 		# vimPlugins.harpoon
 		vimPlugins.plenary-nvim
 	];
