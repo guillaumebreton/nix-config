@@ -12,6 +12,12 @@ This config is heavily indebted to
 - https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
 - https://www.youtube.com/watch?v=1dzgVkgQ5mE
 
+
+# TODO
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 # Install
 
 To use these configs yourself as a starter:
