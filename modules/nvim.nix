@@ -12,6 +12,6 @@
         vimAlias = true;
     };
    	programs.neovim.plugins = [
-        vimPlugins.telescope-nvim
+        pkgs.vimPlugins.telescope-nvim
     ];
 }
