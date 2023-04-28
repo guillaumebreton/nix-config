@@ -7,5 +7,8 @@
     };
 	home.packages = with pkgs; [
 	    neovim
+		vimPlugins.packer-nvim
+		vimPlugins.harpoon
+		vimPlugins.plenary-nvim
 	];
 }
