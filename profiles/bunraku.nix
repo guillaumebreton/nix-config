@@ -20,10 +20,6 @@ in {
 	home.username = "guillaume";
 	home.homeDirectory = "/Users/guillaume";
 
-	programs.neovim = {
-		enable = true;
-	};
-
 	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
 		# pscale # the cli for pscale database

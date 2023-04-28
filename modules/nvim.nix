@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 {
     xdg.configFile."i3" = {
-        source = ./config/nvim;
+        source = ../config/nvim;
         target = "nvim";
     };
 	home.packages = with pkgs; [
