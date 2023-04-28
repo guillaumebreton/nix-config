@@ -40,9 +40,11 @@ in {
         nodePackages.typescript
 
 		ledger
+		hledger
 
-
-
+        # TODO should be part of go
+		gopls
+		go
 
 		# nodePackages.node-gyp-build
 		# nodePackages.lerna # lerna is a package manager for Nix

@@ -6,5 +6,4 @@
 		gopls # Golang language server
 		delve # Golang debugger
 	];
-
 }

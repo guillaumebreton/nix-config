@@ -11,6 +11,7 @@ let
 		./starship.nix
 		./tmux.nix
 		./helix.nix
+		./nvim.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
@@ -61,7 +62,7 @@ in {
 	home.packages = with pkgs; [
 		bat # Replacement for cat
 		curl # good old curl
-		exa # Replacement for lds
+		exa # Replacement for ls
 		fd # Replacement for finx d
 		(lib.lowPrio fzf) # fuzzy finder
 		jq # JSON faster
