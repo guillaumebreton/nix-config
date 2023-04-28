@@ -7,8 +7,6 @@
     };
 	home.packages = with pkgs; [
 	    neovim
-		vimPlugins.telescope-fzf-native-nvim
-		# vimPlugins.harpoon
-		vimPlugins.plenary-nvim
+		vimPlugins.packer-nvim
 	];
 }
