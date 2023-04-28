@@ -1,7 +1,7 @@
 # nix module to install neovim
 { config, pkgs, ... }:
 {
-    xdg.configFile."i3" = {
+    xdg.configFile."nvim" = {
         source = ../config/nvim;
         target = "nvim";
     };
