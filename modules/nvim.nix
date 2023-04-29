@@ -18,6 +18,7 @@
 
         # treesitter
         (nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java ]))
+        nvim-treesitter-textobjects
 
         # lsp
         nvim-lspconfig
@@ -29,7 +30,6 @@
         cmp-nvim-lua
         luasnip
         lsp-zero-nvim
-
         # icons
         nvim-web-devicons
 
