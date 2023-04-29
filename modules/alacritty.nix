@@ -14,7 +14,10 @@
 			padding.y = 10;
 		};
 		font = {
-			size = 12.0;
+			size = 13.0;
+      offset = {
+        y = 5;
+      };
 			# use_thin_strokes = true;
 			normal.family = "Berkeley Mono";
 			bold.family = "Berkeley Mono";
