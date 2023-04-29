@@ -4,18 +4,13 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    # Specify the channel to use for Home Manager and Nixpkgs.
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-
-
   };
 
-  outputs = { nixpkgs, home-manager, nixpkgs-unstable, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-darwin";
 
@@ -23,19 +18,21 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-
-      lib = nixpkgs.lib;
     in {
-      # Use the provided nixpkgs and home-manager.
-      homeConfigurations.bunraku = home-manager.lib.homeManagerConfiguration {
+      # This saves an extra Nixpkgs evaluation, adds consistency, and removes the dependency on NIX_PATH, which is otherwise used for importing Nixpkgs.
+      home-manager.useGlobalPkgs = true;
 
+      # define the configuration for bunraku
+      homeConfigurations.bunraku = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
         modules = [
           ./profiles/bunraku.nix
         ];
         # use nix unstable channel in home-manager.
+
         extraSpecialArgs = {
-            inherit nixpkgs-unstable;
+            inherit nixpkgs;
         };
       };
     };
