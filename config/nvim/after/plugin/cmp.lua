@@ -46,7 +46,7 @@ require('cmp').setup({
     },
     sources = {
         { name = 'nvim_lsp' },
-        { name = "luasnip" },
+        -- { name = "luasnip" },
         { name = "buffer",  keyword_length = 5 },
         { name = "path" },
     },
