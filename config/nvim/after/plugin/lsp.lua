@@ -48,8 +48,12 @@ end)
 
 lsp.setup()
 
--- NOTE: I'm not sure why I need to setup the configuration here manually
-require 'lspconfig'.rust_analyzer.setup {}
+-- When you don't have mason.nvim installed
+-- You'll need to list the servers installed in your system
+
+lsp.setup_servers({
+    'rust_analyzer',
+})
 
 vim.diagnostic.config({
     virtual_text = true
