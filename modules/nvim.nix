@@ -13,7 +13,7 @@
     };
    	programs.neovim.plugins = [
         pkgs.vimPlugins.telescope-nvim
-        pkgs.vimPlugins.nvim-treesitter
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java ]))
         pkgs.vimPlugins.nightfox-nvim
     ];
 }
