@@ -1,2 +1,2 @@
 require("yak");
-print("hello");
+vim.cmd [[colorscheme nightfox]]

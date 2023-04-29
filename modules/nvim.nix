@@ -14,5 +14,6 @@
    	programs.neovim.plugins = [
         pkgs.vimPlugins.telescope-nvim
         pkgs.vimPlugins.nvim-treesitter
+        pkgs.vimPlugins.nightfox-nvim
     ];
 }
