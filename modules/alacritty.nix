@@ -1,5 +1,3 @@
-# Starship configuration
-
 { config, lib, pkgs, ... }:
 
 {
@@ -16,7 +14,7 @@
 		font = {
 			size = 13.0;
       offset = {
-        y = 5;
+        y = 3;
       };
 			# use_thin_strokes = true;
 			normal.family = "Berkeley Mono";
