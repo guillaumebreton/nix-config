@@ -35,7 +35,7 @@ in {
 		# Global Git config
 		extraConfig = {
 			core = {
-			editor = "hx";
+			editor = "vi";
 			pager = "delta --dark";
 			whitespace = "trailing-space,space-before-tab";
 			};
