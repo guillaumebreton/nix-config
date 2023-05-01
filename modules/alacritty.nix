@@ -1,5 +1,3 @@
-# Starship configuration
-
 { config, lib, pkgs, ... }:
 
 {
@@ -14,10 +12,13 @@
 			padding.y = 10;
 		};
 		font = {
-			size = 12.0;
+			size = 13.0;
+      offset = {
+        y = 3;
+      };
 			# use_thin_strokes = true;
-			normal.family = "FiraCode Nerd Font";
-			bold.family = "FiraCode Nerd Font";
+			normal.family = "Berkeley Mono";
+			bold.family = "Berkeley Mono";
 		};
 		cursor.style = "Beam";
 		scrolling = {

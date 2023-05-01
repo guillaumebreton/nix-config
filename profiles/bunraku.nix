@@ -20,10 +20,6 @@ in {
 	home.username = "guillaume";
 	home.homeDirectory = "/Users/guillaume";
 
-	programs.neovim = {
-		enable = true;
-	};
-
 	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
 		# pscale # the cli for pscale database
@@ -40,9 +36,11 @@ in {
         nodePackages.typescript
 
 		ledger
+		hledger
 
-
-
+        # TODO should be part of go
+		gopls
+		go
 
 		# nodePackages.node-gyp-build
 		# nodePackages.lerna # lerna is a package manager for Nix

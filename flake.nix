@@ -11,12 +11,29 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-    {
+    let
+      system = "x86_64-darwin";
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+    in {
+      # This saves an extra Nixpkgs evaluation, adds consistency, and removes the dependency on NIX_PATH, which is otherwise used for importing Nixpkgs.
+      home-manager.useGlobalPkgs = true;
+
+      # define the configuration for bunraku
       homeConfigurations.bunraku = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+        inherit pkgs;
+
         modules = [
           ./profiles/bunraku.nix
         ];
+        # use nix unstable channel in home-manager.
+
+        extraSpecialArgs = {
+            inherit nixpkgs;
+        };
       };
     };
 }
