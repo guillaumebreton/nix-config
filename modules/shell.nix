@@ -34,12 +34,7 @@ let
 		gpf="git push --force-with-lease";
 
     # github pr 
-    gpr=''
-      gpr() {
-        gh pr view --web || gh pr create --fill --web
-      }
-      
-    '';
+    gpr="gh pr view --web || gh pr create --fill --web";
 
 
 		# go aliases
