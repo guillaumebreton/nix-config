@@ -13,3 +13,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- unknow
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- file tree mapping
+vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>f', ':NvimTreeFindFileToggle<CR>', { noremap = true })
