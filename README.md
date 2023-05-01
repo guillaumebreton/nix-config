@@ -2,25 +2,7 @@
 
 Nix/Home manager configuration for my hosts.
 
-# Debts
-
-This config is heavily indebted to
-
-- lucperkins/nix-home-config.
-- https://www.youtube.com/watch?v=KJgN0lnA5mk
-- https://gist.github.com/jmatsushita/5c50ef14b4b96cb24ae5268dab613050
-- https://www.bekk.christmas/post/2021/16/dotfiles-with-nix-and-home-manager
-- https://www.youtube.com/watch?v=1dzgVkgQ5mE
-
-
-# TODO
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 # Install
-
-To use these configs yourself as a starter:
 
 1. Install Nix
 
@@ -44,13 +26,17 @@ export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/
 nix-shell '<home-manager>' -A install
 ```
 
-4. Install the [FiraCode nerd font](https://www.nerdfonts.com/)
-5. Clone the repository
+4. Install the Berkeley Mono font
+5. Clone the repository in a directory
 6. Run
 
 ```
 home-manager switch --flake .#$(hostname -s)
 cd ~/Workspaces/nix-config && home-manager switch --flake .#bunraku
+```
+
+```
+switch = "nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && \"$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)\"/activate && source ~/.zshrc";
 ```
 
 # Trouble shooting
@@ -59,7 +45,6 @@ cd ~/Workspaces/nix-config && home-manager switch --flake .#bunraku
 
 ```
 nix flake update
-# then build again
 ```
 
 - Upgrade nix
