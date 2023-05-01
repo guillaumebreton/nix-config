@@ -73,8 +73,9 @@ in {
 		ouch # zip, tar replacement
 		coreutils # The best unix utilities
 		dateutils # Date utilities
-		helix # Awesome editor to replace nvim
 		nnn # file explorer
+    gh # github cli
+
 
 	] ++ gitTools ;
 
