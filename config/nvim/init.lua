@@ -18,7 +18,7 @@ vim.opt.showmatch = true                          -- Highlight matching parenthe
 vim.opt.splitright = true                         -- Split windows right to the current windows
 vim.opt.splitbelow = true                         -- Split windows below to the current windows
 vim.opt.autowrite = true                          -- Automatically save before :next, :make etc.
-vim.opt.autochdir = true                          -- Change CWD when I open a file
+vim.opt.autochdir = false                         -- Don't Change CWD when I open a file
 
 vim.opt.mouse = 'a'                               -- Enable mouse support
 vim.opt.clipboard = 'unnamedplus'                 -- Copy/paste to system clipboard
