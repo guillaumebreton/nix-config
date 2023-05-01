@@ -21,7 +21,7 @@
         telescope-nvim
 
         # treesitter
-        (nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java p.nix ]))
+        (nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java p.nix p.lua ]))
         # Syntax aware text-objects, select, move, swap, and peek support
         nvim-treesitter-textobjects
 

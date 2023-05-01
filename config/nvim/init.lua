@@ -1,11 +1,13 @@
 require("yak");
-vim.cmd [[colorscheme nightfox]]
 
 ----------------
 --- SETTINGS ---
 ----------------
 
--- disable netrw at the very start of our init.lua, because we use nvim-tree
+-- Set the colorscheme
+vim.cmd [[colorscheme nightfox]]
+
+-- Disable netrw at the very start of our init.lua, because we use nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -102,7 +104,7 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
--- tree 
+-- Tree 
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   filters = {
@@ -110,7 +112,7 @@ require("nvim-tree").setup({
   },
 })
 
--- treesitter
+-- Treesitter
 require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,

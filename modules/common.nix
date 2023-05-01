@@ -12,6 +12,7 @@ let
 		./tmux.nix
 		./helix.nix
 		./nvim.nix
+    ./lua.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
