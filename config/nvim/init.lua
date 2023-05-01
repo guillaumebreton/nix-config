@@ -181,10 +181,8 @@ vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 -- CUSTOM MAPPINGS 
 ----------------------------
 
-
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- move the screen one page downward and center the cursor
