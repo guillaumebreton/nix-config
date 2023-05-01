@@ -37,6 +37,7 @@ let
     gpr=''
       gpr() {
         gh pr view --web || gh pr create --fill --web
+      }
       
     '';
 
