@@ -33,6 +33,14 @@ let
 		grc="git rebase --continue";
 		gpf="git push --force-with-lease";
 
+    # github pr 
+    gpr=''
+      gpr() {
+        gh pr view --web || gh pr create --fill --web
+      
+    '';
+
+
 		# go aliases
 		got="go test ./...";
 		goi="go install .";
