@@ -9,6 +9,8 @@ vim.cmd [[colorscheme nightfox]]
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.mapleader = " "
+
 vim.opt.termguicolors = true                      -- Enable 24-bit RGB colors
 
 vim.opt.number = true                             -- Show line numbers
@@ -29,8 +31,6 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "undo"
 
 -- Indent Settings
--- I'm in the Spaces camp (sorry Tabs folks), so I'm using a combination of
--- settings to insert spaces all the time.
 vim.opt.expandtab = true  -- expand tabs into spaces
 vim.opt.shiftwidth = 2    -- number of spaces to use for each step of indent.
 vim.opt.tabstop = 2       -- number of spaces a TAB counts for
