@@ -23,3 +23,7 @@ vim.keymap.set('', '<C-j>', '<C-W>j')
 vim.keymap.set('', '<C-k>', '<C-W>k')
 vim.keymap.set('', '<C-h>', '<C-W>h')
 vim.keymap.set('', '<C-l>', '<C-W>l')
+
+-- Fast saving
+vim.keymap.set('n', '<Leader>w', ':write!<CR>')
+vim.keymap.set('n', '<Leader>q', ':q!<CR>', { silent = true })
