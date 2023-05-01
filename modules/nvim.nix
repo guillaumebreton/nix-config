@@ -41,11 +41,14 @@
         cmp-nvim-lua
         luasnip
         lsp-zero-nvim
+
         # icons
         nvim-web-devicons
 
         # colorschemes
         nightfox-nvim
 
+        # error/issue display
+        trouble-nvim
     ];
 }

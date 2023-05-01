@@ -96,7 +96,7 @@ lsp.setup()
 -- You'll need to list the servers installed in your system
 lsp.setup_servers({
     'rust_analyzer',
-    'sumneko_lua',
+    'gopls'
 })
 
 vim.diagnostic.config({
