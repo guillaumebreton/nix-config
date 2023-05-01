@@ -119,7 +119,7 @@ in {
 			eval "$(direnv hook zsh)"
 
             # start devlopement enviroment
-            denv(){
+            ved(){
                 # If no argument is given, list all the workspaces
                 selected=$1
                 if [ -z $1 ]; then
