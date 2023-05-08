@@ -36,11 +36,14 @@
         nvim-cmp
         cmp-buffer
         cmp-path
-        cmp_luasnip
         cmp-nvim-lsp
         cmp-nvim-lua
-        luasnip
         lsp-zero-nvim
+
+        # snippets
+        friendly-snippets
+        luasnip
+        cmp_luasnip
 
         # icons
         nvim-web-devicons

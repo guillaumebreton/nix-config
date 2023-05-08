@@ -177,6 +177,9 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
+-- lua snip
+require("luasnip.loaders.from_vscode").lazy_load()
+
 
 ----------------------------
 -- CUSTOM MAPPINGS 
