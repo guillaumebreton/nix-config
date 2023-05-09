@@ -96,7 +96,8 @@ lsp.setup()
 -- You'll need to list the servers installed in your system
 lsp.setup_servers({
     'rust_analyzer',
-    'gopls'
+    'gopls',
+    'tsserver',
 })
 
 vim.diagnostic.config({
@@ -226,3 +227,12 @@ vim.keymap.set('n', '<leader>ds', vim.diagnostic.setqflist)
 
 -- Trouble 
 vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true })
+
+-- Visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+
