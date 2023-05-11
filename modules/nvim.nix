@@ -40,6 +40,9 @@
         cmp-nvim-lua
         lsp-zero-nvim
 
+        # Comment
+        nvim-comment
+
         # snippets
         friendly-snippets
         luasnip
