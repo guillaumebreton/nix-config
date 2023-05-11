@@ -37,6 +37,9 @@ vim.opt.tabstop = 2       -- number of spaces a TAB counts for
 vim.opt.autoindent = true -- copy indent from current line when starting a new line
 vim.opt.wrap = true
 
+-- auto formatting
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+
 ----------------------------
 -- PLUGINS CONFIGURATION
 ----------------------------
