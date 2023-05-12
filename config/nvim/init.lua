@@ -216,7 +216,7 @@ vim.keymap.set('', '<C-l>', '<C-W>l')
 
 -- Fast saving
 vim.keymap.set('n', '<Leader>w', ':write!<CR>')
-vim.keymap.set('n', '<Leader>q', ':q!<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>q', ':wqall!<CR>', { silent = true })
 vim.opt.number = true        -- Show line numbers
 vim.opt.showmatch = true     -- Highlight matching parenthesis
 vim.opt.splitright = true    -- Split windows right to the current windows
