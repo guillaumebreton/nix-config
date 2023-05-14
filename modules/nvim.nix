@@ -56,5 +56,8 @@
 
         # error/issue display
         trouble-nvim
+
+        # view startup event timing information 
+        vim-startuptime
     ];
 }
