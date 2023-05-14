@@ -160,6 +160,7 @@ lsp.setup_servers({
     'rust_analyzer',
     'gopls',
     'tsserver',
+    'elixirls'
 })
 
 vim.diagnostic.config({
