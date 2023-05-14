@@ -8,6 +8,7 @@ let
 		../modules/common.nix
 		../modules/golang.nix
 		../modules/rust.nix
+    ../modules/elixir.nix
 		../modules/typescript.nix
 	];
 

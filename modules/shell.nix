@@ -125,7 +125,6 @@ in {
           if [ -z $1 ]; then
               selected=`ls ~/Workspaces/ | fzf`
           fi
-          echo "Selected: $selected"
           # ctrl-c pressed
           if [ -z $selected ]; then
               return 0
