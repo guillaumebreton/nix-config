@@ -154,12 +154,6 @@ end)
 
 lsp.setup()
 
--- specific lsp setup for elixirls
-require'lspconfig'.elixirls.setup{
-    cmd = { "elixir-ls" };
-}
-
-require'lspconfig'.elixirls.setup{}
 
 -- When you don't have mason.nvim installed
 -- You'll need to list the servers installed in your system
@@ -167,8 +161,12 @@ lsp.setup_servers({
     'rust_analyzer',
     'gopls',
     'tsserver',
-    'elixirls'
 })
+-- specific lsp setup for elixirls
+require'lspconfig'.elixirls.setup{
+    cmd = { "elixir-ls" };
+}
+
 
 vim.diagnostic.config({
     virtual_text = true
