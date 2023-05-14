@@ -32,9 +32,9 @@ in {
 		flyctl
 		postgresql
 		nodejs-16_x
-    	nodePackages.eslint_d
-        nodePackages.typescript-language-server
-        nodePackages.typescript
+    nodePackages.eslint_d
+    nodePackages.typescript-language-server
+    nodePackages.typescript
 
 		ledger
 		hledger
@@ -67,11 +67,6 @@ in {
 		# squashfsTools
 		# x11_ssh_askpass
 		# zstd
-
-		# postgresql
-		# temporary
-		# flyctl
-
 	];
 
 }

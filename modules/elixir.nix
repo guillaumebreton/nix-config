@@ -5,6 +5,5 @@
 		elixir 
 		elixir_ls 
     erlang
-    fly
 	];
 }
