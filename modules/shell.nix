@@ -34,7 +34,7 @@ let
 		gpf="git push --force-with-lease";
 
     # github pr
-    gpr="gh pr view --web || gh pr create --fill --web";
+    gpr="gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
 
 
 		# go aliases
