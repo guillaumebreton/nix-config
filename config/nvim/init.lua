@@ -44,6 +44,8 @@ vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 -- PLUGINS CONFIGURATION
 ----------------------------
 
+require('neoscroll').setup()
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")

@@ -44,7 +44,7 @@
         nvim-comment
 
         # Smooth scroll
-        neoscroll
+        neoscroll-nvim
 
         # snippets
         friendly-snippets
