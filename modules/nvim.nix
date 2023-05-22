@@ -43,6 +43,9 @@
         # Comment
         nvim-comment
 
+        # Smooth scroll
+        neoscroll
+
         # snippets
         friendly-snippets
         luasnip
