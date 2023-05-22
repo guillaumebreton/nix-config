@@ -44,7 +44,19 @@ vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 -- PLUGINS CONFIGURATION
 ----------------------------
 
-require('neoscroll').setup()
+require('neoscroll').setup(
+    -- -- All these keys will be mapped to their corresponding default scrolling animation
+    -- mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+    --             '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+    -- hide_cursor = true,          -- Hide cursor while scrolling
+    -- stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+    -- respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+    -- cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+    -- easing_function = nil,       -- Default easing function
+    -- pre_hook = nil,              -- Function to run before the scrolling animation starts
+    -- post_hook = nil,             -- Function to run after the scrolling animation ends
+    -- performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+)
 
 local lsp = require("lsp-zero")
 
@@ -262,9 +274,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- move the screen one page downward and center the cursor
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- move the screen one page backward and center the cursor
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- unknow
 vim.keymap.set("n", "n", "nzzzv")
