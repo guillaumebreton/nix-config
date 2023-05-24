@@ -5,6 +5,8 @@
 		nodePackages.eslint_d
     nodePackages.typescript-language-server
     nodePackages.typescript
+    nodePackages.pnpm
 		nodejs-16_x
+
 	];
 }
