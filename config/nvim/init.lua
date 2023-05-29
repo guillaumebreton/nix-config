@@ -84,6 +84,8 @@ local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+
+
 require('cmp').setup({
         snippet = {
             expand = function(args)
@@ -265,6 +267,14 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 -- comment
 require('nvim_comment').setup({comment_empty = false})
+
+-- Copilot
+-- disable tab keymap for Copilot
+vim.g.copilot_no_tab_map = true
+vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true, noremap = true, replace_keycodes = false })
+
+
+
 
 ----------------------------
 -- CUSTOM MAPPINGS 
