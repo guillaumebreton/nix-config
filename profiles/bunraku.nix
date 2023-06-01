@@ -31,7 +31,7 @@ in {
 		bash
 		flyctl
 		postgresql
-		nodejs-16_x
+		nodejs
     nodePackages.eslint_d
     nodePackages.typescript-language-server
     nodePackages.typescript
@@ -42,6 +42,8 @@ in {
         # TODO should be part of go
 		gopls
 		go
+
+    google-cloud-sdk
 
 		# nodePackages.node-gyp-build
 		# nodePackages.lerna # lerna is a package manager for Nix
