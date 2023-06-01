@@ -44,6 +44,7 @@ in {
 		go
 
     google-cloud-sdk
+    terraform
 
 		# nodePackages.node-gyp-build
 		# nodePackages.lerna # lerna is a package manager for Nix
