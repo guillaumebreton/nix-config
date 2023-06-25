@@ -75,6 +75,7 @@ in {
 		dateutils # Date utilities
 		nnn # file explorer
     gh # github cli
+    pscale  # pscale cli
 
 
 	] ++ gitTools ;
