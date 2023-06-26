@@ -77,6 +77,8 @@ in {
     gh # github cli
     pscale  # pscale cli
 
+    go-migrate # database migration tool
+
 
 	] ++ gitTools ;
 
