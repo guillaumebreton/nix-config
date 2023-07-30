@@ -76,6 +76,7 @@ in {
 		nnn # file explorer
     gh # github cli
     pscale  # pscale cli
+    golangci-lint # golang linter
 
 	] ++ gitTools ;
 
