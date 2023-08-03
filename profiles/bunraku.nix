@@ -36,40 +36,15 @@ in {
     nodePackages.typescript-language-server
     nodePackages.typescript
 
-		ledger
-		hledger
-
-        # TODO should be part of go
+    # TODO should be part of go
 		gopls
 		go
 
     google-cloud-sdk
     terraform
 
-		# nodePackages.node-gyp-build
-		# nodePackages.lerna # lerna is a package manager for Nix
-		# nodejs # nodejs
-		# temp dev
-		# nodePackages.vercel
-		# nodePackages.pnpm #Ultra fast npm alternative
+    typst
 
-		# nerves deployment
-		# fwup
-		# squashfsTools
-		# coreutils-prefixed
-		# xz
-		# pkg-config
-
-		# autoconf
-		# automake
-		# curl
-		# erlangR24
-		# fwup
-		# pkgs.beam.packages.erlangR24.elixir
-		# rebar3
-		# squashfsTools
-		# x11_ssh_askpass
-		# zstd
 	];
 
 }
