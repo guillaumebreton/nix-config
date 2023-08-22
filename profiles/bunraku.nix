@@ -32,9 +32,14 @@ in {
 		flyctl
 		postgresql
 		nodejs
+
+
+    # should be a separate package
     nodePackages.eslint_d
     nodePackages.typescript-language-server
     nodePackages.typescript
+    nodePackages.vscode-langservers-extracted
+
 
     # TODO should be part of go
 		gopls

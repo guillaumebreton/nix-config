@@ -177,6 +177,7 @@ lsp.setup_servers({
     'rust_analyzer',
     'gopls',
     'tsserver',
+    "html",
 })
 -- specific lsp setup for elixirls
 require'lspconfig'.elixirls.setup{
@@ -329,4 +330,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- Autoformat
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
