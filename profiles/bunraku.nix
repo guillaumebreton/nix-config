@@ -32,6 +32,7 @@ in {
 		flyctl
 		postgresql
 		nodejs
+    mariadb
 
 
     # should be a separate package
