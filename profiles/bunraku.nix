@@ -32,7 +32,9 @@ in {
 		flyctl
 		postgresql
 		nodejs
+
     mariadb
+    tailwindcss
 
 
     # should be a separate package
