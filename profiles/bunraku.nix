@@ -52,6 +52,7 @@ in {
     terraform
 
     typst
+    d2
 
 	];
 
