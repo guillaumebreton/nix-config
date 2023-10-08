@@ -8,15 +8,36 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    conform-nvim.url = "github:stevearc/conform.nvim";
+    conform-nvim.flake = false;
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-darwin";
 
       pkgs = import nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
+        overlays = [
+          (self: super: {
+            vimPlugins =
+              super.vimPlugins
+              // {
+                clipboard-image = super.vimUtils.buildVimPlugin {
+                  name = "clipboard-image.nvim";
+                  pname = "clipboard-image.nvim";
+                  src = inputs.clipboard-image;
+                  # buildInputs = [ super.curl ];
+                };
+                conform-nvim = super.vimUtils.buildVimPlugin {
+                  name = "conform-nvim";
+                  pname = "conform-nvim";
+                  src = inputs.conform-nvim;
+                };
+              };
+          })
+        ];
       };
     in {
       # This saves an extra Nixpkgs evaluation, adds consistency, and removes the dependency on NIX_PATH, which is otherwise used for importing Nixpkgs.

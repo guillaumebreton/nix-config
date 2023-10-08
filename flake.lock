@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "conform-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696629195,
+        "narHash": "sha256-+JGEU0CLuwEMmbhS3GiXdCENyE+ARuZOI7ByrqjIiwU=",
+        "owner": "stevearc",
+        "repo": "conform.nvim",
+        "rev": "e75819642c36810a55a7235b6b5e16a5ce896ed3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stevearc",
+        "repo": "conform.nvim",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +54,7 @@
     },
     "root": {
       "inputs": {
+        "conform-nvim": "conform-nvim",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

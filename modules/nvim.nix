@@ -60,5 +60,8 @@
         # error/issue display
         trouble-nvim
 
+        # conform formatting
+        conform-nvim
+
     ];
 }
