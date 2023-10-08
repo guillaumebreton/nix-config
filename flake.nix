@@ -27,8 +27,8 @@
                 conform-nvim = super.vimUtils.buildVimPlugin {
                   name = "conform-nvim";
                   pname = "conform-nvim";
-                  dontCheck = true;
-                  dontBuild = true;
+                  dontCheck = true; # doesn't work without this
+                  dontBuild = true; # doesn't work without this
                   src = inputs.conform-nvim;
                 };
               };

@@ -63,5 +63,8 @@
         # conform formatting
         conform-nvim
 
+        # linting
+        nvim-lint
+
     ];
 }

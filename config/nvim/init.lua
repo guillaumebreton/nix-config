@@ -360,3 +360,23 @@ require("conform").setup({
     golang = { "gofmt" }
   }
 })
+
+
+-- linting
+-- See https://github.com/zmre/pwnvim/blob/main/pwnvim/plugins.lua
+require('lint').linters_by_ft = {
+  markdown = { 'vale' },
+  css = { 'prettier' },
+  svelte = { 'eslint_d' },
+  python = { "mypy", "ruff" },
+  nix = { "statix" },
+  bash = { "shellcheck" },
+  typescript = { "prettier" },
+  javascript = { "prettier" },
+  rust = { "rustfmt" },
+  golang = { "golangcilint" }
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function() require("lint").try_lint() end
+})
