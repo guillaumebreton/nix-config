@@ -66,5 +66,8 @@
         # linting
         nvim-lint
 
+        # easy motion
+        leap-nvim
+
     ];
 }

@@ -276,6 +276,10 @@ vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")',
   { silent = true, expr = true, noremap = true, replace_keycodes = false })
 
 
+-- leap
+require('leap').add_default_mappings()
+
+
 
 
 ----------------------------
