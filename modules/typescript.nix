@@ -6,6 +6,7 @@
     nodePackages.typescript-language-server
     nodePackages.typescript
     nodePackages.pnpm
+    nodePackages_latest.prettier
 		nodejs
 
 	];
