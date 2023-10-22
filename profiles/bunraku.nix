@@ -51,8 +51,9 @@ in {
     google-cloud-sdk
     terraform
 
-    typst
     d2
+
+    # graphql instrospection tooling
 
 	];
 
