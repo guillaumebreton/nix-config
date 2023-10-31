@@ -23,6 +23,7 @@ in {
 
 	home.packages = with pkgs; [
 		direnv # Per-directory environment variables
+    shawdowenv
 		# pscale # the cli for pscale database
 		yarn 	# yarn
 		jo # jo is a JSON tool
@@ -54,7 +55,7 @@ in {
     # diagram tooling
     d2
     nmap
-    rustscan
+
 
 	];
 
