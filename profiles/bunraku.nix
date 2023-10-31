@@ -51,9 +51,10 @@ in {
     google-cloud-sdk
     terraform
 
+    # diagram tooling
     d2
-
-    # graphql instrospection tooling
+    nmap
+    rustscan
 
 	];
 

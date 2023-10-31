@@ -1,6 +1,16 @@
 # nix module to install neovim
-{ config, pkgs, ... }:
-{
+{ config, lib, pkgs, ... }:
+let 
+  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+    pname = "${lib.strings.sanitizeDerivationName repo}";
+    version = ref;
+    src = builtins.fetchGit {
+      url = "https://github.com/${repo}.git";
+      ref = ref;
+      rev = rev;
+    };
+  };
+in {
     # add config
     xdg.configFile."nvim" = {
         source = ../config/nvim;
@@ -67,7 +77,7 @@
         nvim-lint
 
         # easy motion
-        leap-nvim
+        (fromGitHub "48817af25f51c0590653bbc290866e4890fe1cbe" "main" "folke/flash.nvim")
 
     ];
 }

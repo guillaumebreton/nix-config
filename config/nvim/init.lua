@@ -276,10 +276,38 @@ vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")',
   { silent = true, expr = true, noremap = true, replace_keycodes = false })
 
 
--- leap
-require('leap').add_default_mappings()
+-- flash.nvim configuration
+require('flash').setup({
+  modes = {
+    char = {
+      jump_labels = true
+    }
+  },
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+    { "r", mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+    { "R", mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    {
+      "<c-s>",
+      mode = { "c" },
+      function() require("flash").toggle() end,
+      desc =
+      "Toggle Flash Search"
+    },
+  },
+})
 
 
+
+-- set binding for flash
+vim.keymap.set("n", "s", function()
+  require("flash").jump()
+end)
+
+vim.keymap.set("n", "S", function()
+  require("flash").treesitter()
+end)
 
 
 ----------------------------
@@ -299,7 +327,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- file tree mapping
-vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>n', ':NvimTeeToggle<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>f', ':NvimTreeFindFileToggle<CR>', { noremap = true })
 
 -- Better split switching
