@@ -55,6 +55,9 @@ in {
     d2
     nmap
 
+    bun
+
+
 	];
 
 }
