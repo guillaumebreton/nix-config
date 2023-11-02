@@ -56,6 +56,7 @@ in {
     nmap
 
     bun
+    tailscale
 
 
 	];
