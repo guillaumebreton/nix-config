@@ -34,7 +34,7 @@ in {
 	};
 
 	home.sessionVariables = {
-		EDITOR = "vi";
+		EDITOR = "vi";com
 		TERMINAL = "alacritty";
 	};
 
@@ -63,7 +63,6 @@ in {
 	home.packages = with pkgs; [
 		bat # Replacement for cat
 		curl # good old curl
-		exa # Replacement for ls
 		fd # Replacement for finx d
 		(lib.lowPrio fzf) # fuzzy finder
 		jq # JSON faster
