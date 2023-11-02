@@ -34,7 +34,7 @@ in {
 	};
 
 	home.sessionVariables = {
-		EDITOR = "vi";com
+		EDITOR = "vi";
 		TERMINAL = "alacritty";
 	};
 
