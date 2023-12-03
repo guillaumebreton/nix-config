@@ -58,6 +58,8 @@ in {
     bun
     tailscale
 
+    python311Packages.pip
+
 
 	];
 

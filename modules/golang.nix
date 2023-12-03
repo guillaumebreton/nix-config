@@ -6,5 +6,7 @@
 		delve # Golang debugger
     golangci-lint
 
+    sqlc
+
 	];
 }
