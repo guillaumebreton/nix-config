@@ -58,7 +58,12 @@ in {
     bun
     tailscale
 
-    python311Packages.pip
+    # Python
+    python3
+    pipx
+    ruff
+
+
 
 
 	];
