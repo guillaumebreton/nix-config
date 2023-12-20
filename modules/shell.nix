@@ -10,7 +10,7 @@ let
 		diff = "diff --color=auto";
 		cat = "bat";
 		find = "fd";
-		ls = "ls -lh";
+		ll = "ls -lh";
 		tree="ls -T";
 		rm="trash";
 

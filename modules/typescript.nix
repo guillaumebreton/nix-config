@@ -8,6 +8,7 @@
     nodePackages.pnpm
     nodePackages_latest.prettier
 		nodejs
+    cargo-tauri
 
 	];
 }
