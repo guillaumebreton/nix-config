@@ -10,6 +10,7 @@ let
 		../modules/rust.nix
     ../modules/elixir.nix
 		../modules/typescript.nix
+    ../modules/python.nix
 	];
 
 in {
@@ -58,12 +59,8 @@ in {
     bun
     tailscale
 
-    # Python
-    python3
-    pipx
-    ruff
 
-    holehe
+    # Wez term
 
 
 	];
