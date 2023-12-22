@@ -12,7 +12,7 @@ let
 		./tmux.nix
 		./helix.nix
 		./nvim.nix
-    ./lua.nix
+        ./lua.nix
 	];
 
 	gitTools = with pkgs.gitAndTools; [
@@ -26,7 +26,7 @@ in {
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 
-	home.stateVersion = "22.05";
+	home.stateVersion = "23.11";
 
 	nixpkgs.config = {
 		allowUnfree = true;
