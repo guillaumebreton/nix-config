@@ -1,7 +1,7 @@
 # nix module to install neovim
 { config, lib, pkgs, ... }:
 let 
-  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
     src = builtins.fetchGit {
