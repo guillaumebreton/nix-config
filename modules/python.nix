@@ -5,5 +5,5 @@
     python3
     pipx
     ruff
-  ]
+  ];
 }
