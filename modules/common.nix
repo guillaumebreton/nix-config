@@ -10,7 +10,6 @@ let
 		./shell.nix
 		./starship.nix
 		./tmux.nix
-		./helix.nix
 		./nvim.nix
         ./lua.nix
 	];
@@ -75,7 +74,7 @@ in {
 		nnn # file explorer
     gh # github cli
     pscale  # pscale cli
-    golangci-lint # golang linter
+    # golang linter
 
 	] ++ gitTools ;
 

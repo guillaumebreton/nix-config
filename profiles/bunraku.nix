@@ -46,11 +46,9 @@ in {
 
 
     # TODO should be part of go
-		gopls
-		go
+	gopls
+	go
 
-    google-cloud-sdk
-    terraform
 
     # diagram tooling
     d2
@@ -58,10 +56,6 @@ in {
 
     bun
     tailscale
-
-
-    # Wez term
-
 
 	];
 
