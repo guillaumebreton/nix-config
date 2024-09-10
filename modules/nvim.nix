@@ -1,6 +1,6 @@
 # nix module to install neovim
 { config, lib, pkgs, ... }:
-let 
+let
   fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
@@ -31,7 +31,7 @@ in {
         telescope-nvim
 
         # treesitter
-        (nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java p.nix p.lua p.elixir p.tsx p.eex p.heex p.terraform p.html]))
+        (nvim-treesitter.withPlugins (p: [ p.c p.rust p.go p.javascript p.java p.nix p.elixir p.tsx p.eex p.heex p.terraform p.html]))
         # Syntax aware text-objects, select, move, swap, and peek support
         nvim-treesitter-textobjects
 
@@ -43,7 +43,7 @@ in {
 
         # lsp
         nvim-lspconfig
-        nvim-cmp
+        # nvim-cmp
         cmp-buffer
         cmp-path
         cmp-nvim-lsp
