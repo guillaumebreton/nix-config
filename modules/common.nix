@@ -5,7 +5,6 @@ let
 
 	# Import other Nix files
 	imports = [
-		./alacritty.nix
 		./git.nix
 		./shell.nix
 		./starship.nix
@@ -34,7 +33,7 @@ in {
 
 	home.sessionVariables = {
 		EDITOR = "vi";
-		TERMINAL = "alacritty";
+		# TERMINAL = "alacritty";
 	};
 
 	home.activation =  {

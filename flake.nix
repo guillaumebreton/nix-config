@@ -14,7 +14,7 @@
 
   outputs = inputs @ { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-darwin";
+      system = "aarch64-darwin";
 
       pkgs = import nixpkgs {
         inherit system;
@@ -39,12 +39,12 @@
       # This saves an extra Nixpkgs evaluation, adds consistency, and removes the dependency on NIX_PATH, which is otherwise used for importing Nixpkgs.
       home-manager.useGlobalPkgs = true;
 
-      # define the configuration for bunraku
-      homeConfigurations.bunraku = home-manager.lib.homeManagerConfiguration {
+      # define the configuration for kami
+      homeConfigurations.kami = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [
-          ./profiles/bunraku.nix
+          ./profiles/kami.nix
         ];
         # use nix unstable channel in home-manager.
 
