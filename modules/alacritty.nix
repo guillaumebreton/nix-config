@@ -13,13 +13,12 @@
       font = {
         size = 13.0;
         offset = { y = 3; };
-        # use_thin_strokes = true;
         normal.family = "Berkeley Mono";
         bold.family = "Berkeley Mono";
       };
       cursor.style = "Beam";
       scrolling = { history = 10000; };
-      import = [ "~/.config/alacritty/catppuccin-mocha.toml" ];
+      import = [ "~/.config/alacritty/themes/themes/tokyo_night_enhanced.toml"];
 
     };
   };

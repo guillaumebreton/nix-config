@@ -1,6 +1,6 @@
 # Git settings
 
-{ config, lib, pkgs, ... }:
+{  pkgs, ... }:
 
 let
 	vscode = pkgs.vscode;

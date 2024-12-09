@@ -1,8 +1,5 @@
-{ config, pkgs, mkIf, lib, ... }:
+{  pkgs, lib, ... }:
 let
-  # nigpkgsRev = "nixpkgs-unstable";
-  # pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${nigpkgsRev}.tar.gz") {};
-
   # Import other Nix files
   imports = [
     ./alacritty.nix
