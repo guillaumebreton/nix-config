@@ -6,9 +6,9 @@ Nix/Home manager configuration for my hosts.
 
 1. Install Nix
 
-```
-curl -L https://nixos.org/nix/install | sh
-```
+
+https://github.com/DeterminateSystems/nix-installer
+
 
 2. Enable flakes
 
