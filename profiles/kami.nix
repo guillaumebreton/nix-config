@@ -33,6 +33,8 @@ in {
 		flyctl
 		postgresql
 		nodejs
+		zed-editor
+		nixd
 
     mariadb
     tailwindcss
