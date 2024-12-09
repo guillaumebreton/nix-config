@@ -8,8 +8,8 @@
 			"TERM" = "xterm-256color";
 		};
 		window = {
-			padding.x = 30;
-			padding.y = 30;
+			padding.x = 5;
+			padding.y = 5;
 			title = "bunraku";
 		};
 		font = {

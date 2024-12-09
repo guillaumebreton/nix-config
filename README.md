@@ -33,7 +33,7 @@ nix-shell '<home-manager>' -A install
 
 ```
 home-manager switch --flake .#$(hostname -s)
-cd ~/Workspaces/nix-config && home-manager switch --flake .#bunraku
+cd ~/Workspaces/nix-config && home-manager switch --flake .#kami
 ```
 
 ```
