@@ -57,6 +57,7 @@ in {
       golangci-lint
       gopls
       go
+      tinygo
 
       # PYTHON
       python3
