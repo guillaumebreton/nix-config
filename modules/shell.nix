@@ -1,6 +1,4 @@
-# Shell configuration for zsh (frequently used) and fish (used just for fun)
-
-{ config, lib, pkgs, ... }:
+{  pkgs, ... }:
 
 let
 	# Set all shell aliases programatically
@@ -143,24 +141,6 @@ in {
               tmux switch-client -t $session_name
           fi
       }
-
-
-			tad(){
-				hour=`date +%H`
-				if [[ $hour -lt 12 ]]
-				then
-					task add $@ sched:today seg:M
-				elif [[ $hour -lt 18 ]]
-				then
-					task add $@ sched:today seg:A
-				else
-					task add $@ sched:today seg:E
-				fi
-			}
-
-			tp(){
-				task $@ mod due: sched:tomorrow
-			}
 		'';
 		plugins = [
 			{

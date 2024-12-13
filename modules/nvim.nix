@@ -66,6 +66,7 @@ in {
 
         # colorschemes
         nightfox-nvim
+        tokyonight-nvim
 
         # # error/issue display
         # trouble-nvim

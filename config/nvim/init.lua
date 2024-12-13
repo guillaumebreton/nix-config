@@ -3,7 +3,7 @@
 ----------------
 
 -- Set the colorscheme
-vim.cmd [[colorscheme nightfox]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- Disable netrw at the very start of our init.lua, because we use nvim-tree
 vim.g.loaded_netrw = 1
