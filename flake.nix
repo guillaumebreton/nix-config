@@ -4,13 +4,19 @@
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
+
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs =  { nixpkgs, home-manager, ... }:
+  outputs =  { nixpkgs, ghostty, home-manager, ... }:
     let
       system = "aarch64-darwin";
 
@@ -28,6 +34,7 @@
 
         modules = [
           ./profiles/kami.nix
+          ghostty.packages.aarch64-darwin.default
         ];
         # use nix unstable channel in home-manager.
 

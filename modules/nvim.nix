@@ -65,7 +65,7 @@ in {
         # nvim-web-devicons
 
         # colorschemes
-        nightfox-nvim
+        # nightfox-nvim
         tokyonight-nvim
 
         # # error/issue display

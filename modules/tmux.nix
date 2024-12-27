@@ -64,6 +64,7 @@
 
 	# center the status bar
 	set -g status-justify left
+	set-option -g status-position top
 
 
 	# show session, window, pane in left status bar
