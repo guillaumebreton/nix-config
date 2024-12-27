@@ -34,7 +34,6 @@
 
         modules = [
           ./profiles/kami.nix
-          ghostty.packages.aarch64-darwin.default
         ];
         # use nix unstable channel in home-manager.
 

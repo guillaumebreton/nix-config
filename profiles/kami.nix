@@ -13,7 +13,6 @@ in {
   home.homeDirectory = "/Users/guillaume";
 
   home.packages = with pkgs; [
-    inputs.ghostty.packages."${pkgs.system}".default
     zed-editor
     # diagram tooling
     d2
