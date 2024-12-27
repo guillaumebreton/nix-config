@@ -8,6 +8,7 @@ let
     ./starship.nix
     ./tmux.nix
     ./nvim.nix
+    ./ghostty.nix
   ];
 
   gitTools = with pkgs.gitAndTools; [ delta diff-so-fancy ];

@@ -1,8 +1,8 @@
-{...}
+{  ...}:
 
 {
-  xdg.configFile."nvim" = {
-      source = ../config/nvim;
-      target = "nvim";
+  xdg.configFile."ghostty" = {
+      source = ../config/ghostty;
+      target = "ghostty";
   };
 }

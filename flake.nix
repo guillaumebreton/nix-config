@@ -16,7 +16,7 @@
     };
   };
 
-  outputs =  { nixpkgs, ghostty, home-manager, ... }:
+  outputs = { nixpkgs, ghostty,  home-manager,  ... }:
     let
       system = "aarch64-darwin";
 
@@ -39,6 +39,7 @@
 
         extraSpecialArgs = {
             inherit nixpkgs;
+            inherit ghostty;
         };
       };
     };
