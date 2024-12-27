@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   # Import other Nix files
   imports = [ ../modules/common.nix ];
@@ -13,7 +13,7 @@ in {
   home.homeDirectory = "/Users/guillaume";
 
   home.packages = with pkgs; [
-
+    inputs.ghostty.packages."${pkgs.system}".default
     zed-editor
     # diagram tooling
     d2
