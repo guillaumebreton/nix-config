@@ -3,6 +3,6 @@
 {
   xdg.configFile."ghostty" = {
       source = ../config/ghostty;
-      target = "ghostty";
+      target = "ghostty/config";
   };
 }

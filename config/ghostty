@@ -1,1 +1,5 @@
-test=test
+font-family="Berkeley Mono"
+theme=tokyonight
+window-padding-x=10
+window-padding-y=10
+link-url=true
