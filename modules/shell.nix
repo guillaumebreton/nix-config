@@ -60,7 +60,7 @@ let
 		t= "task ls";
 		tw="task week";
 		tl="task list";
-		ta="ta() {task add $1 sched:today};ta";
+		ta="ta() {task add $@ sched:today};ta";
 		tm="tm() {task mod '$@' };tm";
 		tsa="tsa() {task $1 mod seg:A};tsa";
 		tsm="tsm() {task $1 mod seg:M};tsm";
