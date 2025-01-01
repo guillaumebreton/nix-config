@@ -53,9 +53,6 @@ let
 		# See which Nix packages are installed
 		installed = "nix-env --query --installed";
 
-		# Flycl
-		fly = "flyctl";
-
 		# Nix-shell
 		ns = "nix-shell shell.nix";
 
@@ -74,9 +71,6 @@ let
 		ts="ts() {task $1 start};ts";
 		tt="tt() {task $1 mod sched:$2};tt";
 
-
-		# nnn
-		n="nnn";
 	};
 in {
 
