@@ -1,6 +1,6 @@
 # tmux settings
 
-{ config, lib, pkgs, ... }:
+{  ... }:
 
 {
 	programs.tmux = {
@@ -12,8 +12,11 @@
 
 		# Replaces ~/.tmux.conf
 		extraConfig = ''
-			set-option -g mouse on
-			set-option -g default-shell ''${SHELL}
+
+		set-option -ga terminal-overrides ",xterm-256color:Tc"
+
+		set-option -g mouse on
+		set-option -g default-shell ''${SHELL}
 
 		set -g history-limit 10000
 
@@ -74,7 +77,7 @@
 
 	# show hostname, date, time, and battery in right status bar
 	set-option -g status-right '%m/%d/%y %I:%M\
-	#[fg=red]#(battery discharging)#[default]#(battery charging)'
+	#[fg=red]#[default]'
 
 
 
@@ -91,8 +94,8 @@
 	set -g window-status-current-style bg=black,fg=green
 
 	# set color of active pane
-	set -g pane-active-border-style bg=black,fg=green
-	set -g pane-border-style bg=black,fg=black
+#	set -g pane-active-border-style bg=black,fg=green
+	# set -g pane-border-style bg=black,fg=black
 
 	set-option -g allow-rename off
 		'';
