@@ -23,7 +23,7 @@ report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or 
 report.ls.columns=id,estimate,project,description
 report.ls.labels= ID,Est,Proj,Description
 
-report.tomorrow.columns=id,segment,project,estimate,description
+report.tomorrow.columns=id,project,estimate,description
 report.tomorrow.filter=status:pending and due:tomorrow or status:pending and sched:tomorrow or status:pending and +OVERDUE
 report.tomorrow.sort=status-,start-,priority-,project+,estimate-,due+
 report.tomorrow.labels= ID,Proj,Est,Description
