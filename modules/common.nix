@@ -28,8 +28,11 @@ in {
 
   home.sessionVariables = {
     EDITOR = "vi";
-    # TERMINAL = "alacritty";
+    TERMINAL = "ghotty";
+
   };
+
+
 
   home.packages = with pkgs;
     [
