@@ -2,7 +2,6 @@
 let
   # Import other Nix files
   imports = [
-    ./alacritty.nix
     ./git.nix
     ./shell.nix
     ./starship.nix
@@ -85,6 +84,10 @@ in {
       # database tooling
       postgresql
       sqlc
+
+      # taskwarrior
+      taskwarrior3
+
     ] ++ gitTools;
 
 }
