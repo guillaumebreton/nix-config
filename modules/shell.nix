@@ -58,7 +58,7 @@ let
 
 		# task
 		t= "task ls";
-		tw="task list +WEEK";
+		tw="task week";
 		tom="task tomorrow";
 		tad="tad() {task add \"$@\" sched:today};tad";
 

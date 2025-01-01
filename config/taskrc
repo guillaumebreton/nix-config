@@ -34,13 +34,14 @@ report.list.labels= ID,Proj,Pri,Tags,Est,Due,Sched,Description
 
 # Next report
 report.next.filter=status:pending and sched:
-report.next.columns=id,project,priority,scheduled,description
-report.next.labels= ID,Proj,Pri,Sched,Description
+report.next.columns=id,project,priority,scheduled,due,description
+report.next.sort=status-,start-,due+,sched+,priority-,project+,estimate-
+report.next.labels= ID,Proj,Pri,Sched,Due,Description
 
 # Week report
-report.week.columns=id,project,priority,scheduled,description
-report.week.filter=sched.after:yesterday and sched.before:eow+1day status:pending
-report.week.sort=scheduled+
+report.week.columns=id,project,priority,scheduled,due,description
+report.week.filter=+WEEK
+report.next.sort=due+,sched+,priority-,project+,estimate-
 
 uda.estimate.type=string
 uda.estimate.label=Est
