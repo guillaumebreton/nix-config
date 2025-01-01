@@ -13,7 +13,8 @@
 		# Replaces ~/.tmux.conf
 		extraConfig = ''
 
-		set-option -ga terminal-overrides ",xterm-256color:Tc"
+		set -g default-terminal "tmux-256color"
+		set -ga terminal-overrides ",*256col*:Tc"
 
 		set-option -g mouse on
 		set-option -g default-shell ''${SHELL}
