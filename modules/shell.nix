@@ -60,6 +60,7 @@ let
 		t= "task ls";
 		tw="task week";
 		tl="task list";
+		tom="task list +TOMORROW or sched:tomorrow";
 		tad="tad() {task add \"$@\" sched:today};tad";
 
 		tm="tm() {task mod '$@' };tm";
@@ -68,7 +69,6 @@ let
 		tse="tse() {task $1 mod seg:E};tse";
 		te="te() {task $1 edit};te";
 		td="td() {task $1 mod sched:today};td";
-		tn="tn() {task $1 mod +next};tn";
 		ts="ts() {task $1 start};ts";
 		tt="tt() {task $1 mod sched:$2};tt";
 
