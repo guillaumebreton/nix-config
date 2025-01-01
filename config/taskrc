@@ -7,16 +7,16 @@
 #   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
 
 # Use the command 'task show' to see all defaults and overrides
-
+verbose=blank,footnote,label,new-id,affected,edit,special,project,sync,unwait
 # Files
 data.location=~/.task
 
 # Color theme (uncomment one to use)
-include ~/config/taskwarrior/task.theme
+include ~/.config/taskwarrior/task.theme
 
 default.command=ls
 weekstart=monday
-editor=hx
+editor=nvim
 
 report.ls.sort=status-,start-,segment-/,urgency-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
