@@ -64,6 +64,7 @@ let
 		tw="task week";
 		tm="task tomorrow";
 		tl="task list";
+		ta="ta() {task $1 sched:today};ta";
 		tsa="tsa() {task $1 mod seg:A};tsa";
 		tsm="tsm() {task $1 mod seg:M};tsm";
 		tse="tse() {task $1 mod seg:E};tse";
