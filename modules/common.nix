@@ -8,6 +8,7 @@ let
     ./tmux.nix
     ./nvim.nix
     ./ghostty.nix
+    ./taskwarrior.nix
   ];
 
   gitTools = with pkgs.gitAndTools; [ delta diff-so-fancy ];
