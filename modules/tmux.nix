@@ -94,7 +94,7 @@
 	set -g window-status-current-style bg=black,fg=green
 
 	# set color of active pane
-#	set -g pane-active-border-style bg=black,fg=green
+	#	set -g pane-active-border-style bg=black,fg=green
 	# set -g pane-border-style bg=black,fg=black
 
 	set-option -g allow-rename off
