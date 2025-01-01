@@ -12,7 +12,7 @@
 data.location=~/.task
 
 # Color theme (uncomment one to use)
-include ~/.task.theme
+include ~/config/taskwarrior/task.theme
 
 default.command=ls
 weekstart=monday

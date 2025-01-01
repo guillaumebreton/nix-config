@@ -29,7 +29,7 @@ in {
   home.sessionVariables = {
     EDITOR = "vi";
     TERMINAL = "ghotty";
-    TASKRC = "~/.config/taskwarrior/.taskrc"
+    TASKRC = "~/.config/taskwarrior/taskrc";
 
   };
 
