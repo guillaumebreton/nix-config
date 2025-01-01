@@ -1,13 +1,8 @@
 {  ...}:
 
 {
-  xdg.configFile."taskwarrior-theme" = {
-      source = ../config/.task.theme;
-      target = ".task.theme";
-  };
-
-  xdg.configFile."taskwarrior-config" = {
-      source = ../config/.taskrc;
-      target = ".taskrc";
+  xdg.configFile."ghostty" = {
+      source = ../config/ghostty;
+      target = "ghostty/config";
   };
 }
