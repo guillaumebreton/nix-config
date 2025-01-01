@@ -18,12 +18,12 @@ default.command=ls
 weekstart=monday
 editor=nvim
 
-report.ls.sort=status-,start-/,urgency-,project+,estimate-,due+
+report.ls.sort=status-/,start-/,urgency-,project+,estimate-,due+
 report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:pending and sched <= today or status:completed and sched:today or status:completed and end:today
 report.ls.columns=id,estimate,project,description
 report.ls.labels= ID,Est,Proj,Description
 
-report.tomorrow.columns=id,project,estimate,description
+report.tomorrow.columns=id,segment,project,estimate,description
 report.tomorrow.filter=status:pending and due:tomorrow or status:pending and sched:tomorrow or status:pending and +OVERDUE
 report.tomorrow.sort=status-,start-,priority-,project+,estimate-,due+
 report.tomorrow.labels= ID,Proj,Est,Description
