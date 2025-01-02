@@ -45,7 +45,6 @@ report.week.sort=due+,scheduled+,priority-,project+,estimate-
 
 uda.estimate.type=string
 uda.estimate.label=Est
-uda.estimate.value=L,M,S
 
 # uda.segment.type=string
 # uda.segment.label=Seg
