@@ -19,7 +19,7 @@ weekstart=monday
 editor=nvim
 
 report.ls.sort=status-/,start-/,urgency-,project+,estimate-,due+
-report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:completed and sched:today or status:completed and end:today
+report.ls.filter=status:pending and due:today or status:pending and +OVERDUE or status:completed and sched:today or status:completed and end:today or status:pending and sched <=today
 report.ls.columns=id,estimate,project,description
 report.ls.labels= ID,Est,Proj,Description
 
