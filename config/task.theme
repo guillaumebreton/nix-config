@@ -46,4 +46,5 @@ color.alternate=
 color.scheduled=
 color.label=
 color.uda.priority.L=white
-color.uda.priority.H=yellow
+color.uda.priority.H=white
+color.uda.priority.M=white
