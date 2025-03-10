@@ -60,7 +60,6 @@ in {
       gopls # Golang language server
       delve # Golang debugger
       golangci-lint
-      gopls
       go
       tinygo
 
@@ -68,6 +67,9 @@ in {
       python3
       pipx
       ruff
+
+      # Elixir
+      elixir
 
       # TYPESCRIPT
       nodePackages.typescript
