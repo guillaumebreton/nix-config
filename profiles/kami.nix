@@ -19,6 +19,7 @@ in {
     d2
     nmap
     tailscale
+    jujutsu
 
   ];
 }
