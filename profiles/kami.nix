@@ -1,4 +1,4 @@
-{ pkgs, ghostty, ... }:
+{ pkgs,  ... }:
 let
   # Import other Nix files
   imports = [ ../modules/common.nix ];
