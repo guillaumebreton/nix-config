@@ -92,8 +92,11 @@ in {
       postgresql
       sqlc
 
-      # taskwarrior
-      taskwarrior3
+      # virtualization
+      podman
+      kubectl
+
+      wget
 
     ] ++ gitTools;
 
