@@ -29,7 +29,6 @@ in {
   home.sessionVariables = {
     EDITOR = "vi";
     TERMINAL = "ghotty";
-    TASKRC = "~/.config/taskwarrior/taskrc";
 
   };
 
@@ -61,7 +60,6 @@ in {
       delve # Golang debugger
       golangci-lint
       go
-      tinygo
 
       # PYTHON
       python3
@@ -97,6 +95,8 @@ in {
       kubectl
 
       wget
+
+      claude-code
 
     ] ++ gitTools;
 

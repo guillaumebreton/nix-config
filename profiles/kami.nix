@@ -18,8 +18,6 @@ in {
     # diagram tooling
     d2
     nmap
-    tailscale
     jujutsu
-    claude-code
   ];
 }
