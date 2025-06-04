@@ -20,6 +20,6 @@ in {
     nmap
     tailscale
     jujutsu
-
+    claude-code
   ];
 }
