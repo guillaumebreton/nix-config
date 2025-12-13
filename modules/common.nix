@@ -11,11 +11,6 @@ let
     ./taskwarrior.nix
   ];
 
-  gitTools = with pkgs.gitAndTools; [
-    delta
-    diff-so-fancy
-  ];
-
 in
 {
 
@@ -36,75 +31,72 @@ in
 
   };
 
-  home.packages =
-    with pkgs;
-    [
-      # TOOLING
-      bat # Replacement for cat
-      curl # good old curl
-      fd # Replacement for finx d
-      (lib.lowPrio fzf) # fuzzy finder
-      jq # JSON faster
-      ripgrep # Replacement for grep
-      (lib.lowPrio starship) # Fancy shell that works with zsh
-      trash-cli # a replacement for rm
-      ouch # zip, tar replacement
-      coreutils # The best unix utilities
-      dateutils # Date utilities
-      nnn # file explorer
-      gh # github cli
-      jo # jo is a JSON tool
-      tokei # tokei is a tool to count lines of code
-      jless # jless is a tool to display JSON
-      direnv # Per-directory environment variables
+  home.packages = with pkgs; [
+    # TOOLING
+    bat # Replacement for cat
+    curl # good old curl
+    fd # Replacement for finx d
+    (lib.lowPrio fzf) # fuzzy finder
+    jq # JSON faster
+    ripgrep # Replacement for grep
+    (lib.lowPrio starship) # Fancy shell that works with zsh
+    trash-cli # a replacement for rm
+    ouch # zip, tar replacement
+    coreutils # The best unix utilities
+    dateutils # Date utilities
+    nnn # file explorer
+    gh # github cli
+    jo # jo is a JSON tool
+    tokei # tokei is a tool to count lines of code
+    jless # jless is a tool to display JSON
+    direnv # Per-directory environment variables
 
-      # GOLANG
-      gopls # Golang language server
-      delve # Golang debugger
-      golangci-lint
-      go
+    # GOLANG
+    gopls # Golang language server
+    delve # Golang debugger
+    golangci-lint
+    go
 
-      # PYTHON
-      python3
-      pipx
-      ruff
+    # PYTHON
+    python3
+    pipx
+    ruff
 
-      # Elixir
-      elixir
+    # Elixir
+    elixir
 
-      # TYPESCRIPT
-      nodePackages.typescript
-      nodePackages.vscode-langservers-extracted
-      nodePackages.typescript-language-server # typescript language server
-      nodePackages.eslint_d
-      nodePackages.pnpm
-      nodePackages_latest.prettier
-      nodejs
-      yarn
-      bun
-      cargo-tauri
+    # TYPESCRIPT
+    nodePackages.typescript
+    nodePackages.vscode-langservers-extracted
+    nodePackages.typescript-language-server # typescript language server
+    nodePackages.eslint_d
+    nodePackages.pnpm
+    nodePackages_latest.prettier
+    nodejs
+    yarn
+    bun
+    cargo-tauri
 
-      # NIX
-      nixd
-      nil
-      nixfmt-classic
+    # NIX
+    nixd
+    nil
+    nixfmt-classic
 
-      # database tooling
-      postgresql
-      sqlc
+    # database tooling
+    postgresql
+    sqlc
 
-      # virtualization
-      podman
-      kubectl
+    # virtualization
+    podman
+    kubectl
 
-      # Dev
-      localtunnel
+    # Dev
+    localtunnel
 
-      wget
+    wget
 
-      claude-code
+    claude-code
 
-    ]
-    ++ gitTools;
+  ];
 
 }
