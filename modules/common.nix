@@ -97,7 +97,7 @@ in
       podman
       kubectl
 
-      # Deve
+      # Dev
       localtunnel
 
       wget
