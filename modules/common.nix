@@ -1,4 +1,4 @@
-{  pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 let
   # Import other Nix files
   imports = [
@@ -11,9 +11,13 @@ let
     ./taskwarrior.nix
   ];
 
-  gitTools = with pkgs.gitAndTools; [ delta diff-so-fancy ];
+  gitTools = with pkgs.gitAndTools; [
+    delta
+    diff-so-fancy
+  ];
 
-in {
+in
+{
 
   inherit imports;
   # Let Home Manager install and manage itself.
@@ -32,9 +36,8 @@ in {
 
   };
 
-
-
-  home.packages = with pkgs;
+  home.packages =
+    with pkgs;
     [
       # TOOLING
       bat # Replacement for cat
@@ -94,10 +97,14 @@ in {
       podman
       kubectl
 
+      # Deve
+      localtunnel
+
       wget
 
       claude-code
 
-    ] ++ gitTools;
+    ]
+    ++ gitTools;
 
 }
