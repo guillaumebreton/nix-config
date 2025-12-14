@@ -61,6 +61,7 @@ in
     python3
     pipx
     ruff
+    uv
 
     # Elixir
     elixir
@@ -90,12 +91,10 @@ in
     podman
     kubectl
 
-    # Dev
-    localtunnel
+    bore-cli
+    cloudflared
 
     wget
-
-    claude-code
 
   ];
 
