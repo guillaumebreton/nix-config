@@ -86,6 +86,8 @@ in
     # database tooling
     postgresql
     sqlc
+    goose
+    sqlc
 
     # virtualization
     podman
