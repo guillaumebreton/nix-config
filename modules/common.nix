@@ -35,22 +35,22 @@ in
     # TOOLING
     bat # Replacement for cat
     curl # good old curl
-    fd # Replacement for finx d
     (lib.lowPrio fzf) # fuzzy finder
     jq # JSON faster
-    ripgrep # Replacement for grep
     (lib.lowPrio starship) # Fancy shell that works with zsh
     trash-cli # a replacement for rm
     ouch # zip, tar replacement
     coreutils # The best unix utilities
     dateutils # Date utilities
-    nnn # file explorer
-    gh # github cli
-    jo # jo is a JSON tool
-    tokei # tokei is a tool to count lines of code
-    jless # jless is a tool to display JSON
-    direnv # Per-directory environment variables
+
+    # UTILS
+    delta
     wget
+    direnv
+    gh # github cli
+    jless # jless is a tool to display JSON
+    ripgrep # Replacement for grep
+    fd # Replacement for finx d
 
     # GOLANG
     gopls # Golang language server
@@ -93,9 +93,9 @@ in
     # virtualization
     podman
     kubectl
+    kubectx
 
     # Network
-    bore-cli
     cloudflared
 
     # AI
