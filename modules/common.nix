@@ -8,7 +8,6 @@ let
     ./tmux.nix
     ./nvim.nix
     ./ghostty.nix
-    ./taskwarrior.nix
   ];
 
 in
@@ -100,6 +99,7 @@ in
 
     # AI
     claude-code
+    opencode
 
   ];
 
