@@ -10,8 +10,7 @@ let
     ./ghostty.nix
   ];
 
-in
-{
+in {
 
   inherit imports;
   # Let Home Manager install and manage itself.
@@ -27,8 +26,11 @@ in
   home.sessionVariables = {
     EDITOR = "vi";
     TERMINAL = "ghotty";
-
+    GOPATH = "$HOME/go";
+    GOBIN = "$HOME/go/bin";
   };
+
+  home.sessionPath = [ "$HOME/go/bin" ];
 
   home.packages = with pkgs; [
     # TOOLING
