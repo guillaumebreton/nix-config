@@ -101,6 +101,9 @@ in
     claude-code
     opencode
 
+    #
+    playwright
+
   ];
 
 }
