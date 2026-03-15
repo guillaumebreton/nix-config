@@ -8,6 +8,7 @@ let
     ./tmux.nix
     ./nvim.nix
     ./ghostty.nix
+    ./pi-agent.nix
   ];
 
 in {

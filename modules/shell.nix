@@ -30,7 +30,8 @@ let
     gpf = "git push --force-with-lease";
 
     # github pr
-    gpr = "gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
+    gpr =
+      "gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
 
     # go aliases
     got = "go test ./...";
@@ -44,7 +45,8 @@ let
     # Reload home manager and zsh
     # until https://github.com/nix-community/home-manager/issues/2848 is fixed
     # switch = "home-manager switch && source ~/.zshrc";
-    switch = "nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && \"$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)\"/activate && source ~/.zshrc";
+    switch = ''
+      nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && "$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)"/activate && source ~/.zshrc'';
 
     # Nix garbage collection
     garbage = "nix-collect-garbage -d && docker image prune --force";
@@ -59,8 +61,8 @@ let
     t = "task ls";
     tw = "task week";
     tom = "task tomorrow";
-    tad = "tad() {task add \"$@\" sched:today};tad";
-    tat = "tat() {task add \"$@\" sched:tomorrow};tat";
+    tad = ''tad() {task add "$@" sched:today};tad'';
+    tat = ''tat() {task add "$@" sched:tomorrow};tat'';
 
     tm = "tm() {task mod '$@' };tm";
     tsa = "tsa() {task $1 mod seg:A};tsa";
@@ -73,13 +75,13 @@ let
     tp = "tp() {task $1 mod sched:tomorrow};tp";
 
   };
-in
-{
+in {
 
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
-    defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
+    defaultCommand =
+      "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
   };
 
   # zsh settings
@@ -93,6 +95,7 @@ in
     # Called whenever zsh is initialized
     initContent = ''
       			export TERM="xterm-256color"
+      			export PATH="$HOME/go/bin:$PATH"
       			bindkey -e
 
       			# Nix setup (environment variables, etc.)
@@ -139,17 +142,15 @@ in
                 fi
             }
       		'';
-    plugins = [
-      {
-        name = "zsh-nix-shell";
-        file = "nix-shell.plugin.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.4.0";
-          sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
-        };
-      }
-    ];
+    plugins = [{
+      name = "zsh-nix-shell";
+      file = "nix-shell.plugin.zsh";
+      src = pkgs.fetchFromGitHub {
+        owner = "chisui";
+        repo = "zsh-nix-shell";
+        rev = "v0.4.0";
+        sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
+      };
+    }];
   };
 }
