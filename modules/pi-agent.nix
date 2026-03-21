@@ -3,15 +3,15 @@
 let
   pi-agent = pkgs.buildNpmPackage {
     pname = "pi-coding-agent";
-    version = "0.58.1";
+    version = "0.61.1";
 
     src = pkgs.fetchzip {
       url =
-        "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.58.1.tgz";
-      hash = "sha256-sn0wXaKEd6Ez/wKPqxtoBJA9xOyWvWKXqYMTZMI9uOQ=";
+        "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.61.1.tgz";
+      hash = "sha256-XhVH0WG1MqezyUnpnRgVoXnFgMRxq/6id0CSEpPCWEQ=";
     };
 
-    npmDepsHash = "sha256-kKOY3CJvQVkQK2hWwwKZ6/H7DMfda9AEn4sTQIm4Ag4=";
+    npmDepsHash = "sha256-HRGp2S1Zy5PER46z9mGwOPvFXcJqkIYYNIMF6h+/PDA=";
 
     postPatch = ''
       cp ${./pi-agent-package-lock.json} package-lock.json
