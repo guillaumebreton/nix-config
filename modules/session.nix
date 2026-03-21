@@ -1,4 +1,4 @@
-# Shell session variables, path, and nixpkgs config
+# Shell session variables and nixpkgs config
 
 { ... }:
 
@@ -11,9 +11,5 @@
   home.sessionVariables = {
     EDITOR = "vi";
     TERMINAL = "ghostty";
-    GOPATH = "$HOME/go";
-    GOBIN = "$HOME/go/bin";
   };
-
-  home.sessionPath = [ "$HOME/go/bin" ];
 }

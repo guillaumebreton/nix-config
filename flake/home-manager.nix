@@ -7,7 +7,7 @@
         system = "aarch64-darwin";
         config.allowUnfree = true;
       };
-      modules = [ ./../../profiles/kami.nix ];
+      modules = [ ./../profiles/kami.nix ];
       extraSpecialArgs = { inherit inputs; };
     };
   };

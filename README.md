@@ -6,34 +6,36 @@ Home Manager configuration for macOS (aarch64-darwin).
 
 ```
 nix-config/
-├── flake.nix                       # Inputs only — outputs delegated to flake-parts
+├── flake.nix                  # Inputs only — outputs delegated to flake-parts
+├── flake/                     # Flake-level wiring (auto-imported by import-tree)
+│   ├── systems.nix            # Supported systems
+│   ├── home-manager.nix       # homeConfigurations output (one entry per host)
+│   └── treefmt.nix            # nix fmt formatter (nixfmt)
 ├── profiles/
-│   └── kami.nix                    # Host definition (username, homeDirectory)
-└── modules/
-    ├── flake/                      # Flake-level wiring (auto-imported by import-tree)
-    │   ├── systems.nix             # Supported systems
-    │   ├── home-manager.nix        # homeConfigurations output (one entry per host)
-    │   └── treefmt.nix             # nix fmt formatter (nixfmt)
-    └── (home-manager modules)
-        ├── common.nix              # Import hub for all home modules
-        ├── git.nix                 # Git
-        ├── ghostty.nix             # Ghostty terminal
-        ├── nh.nix                  # Nix Helper: rebuild UX + auto GC
-        ├── nvim.nix                # Neovim
-        ├── packages.nix            # home.packages (all installed tools)
-        ├── pi-agent.nix            # pi coding agent
-        ├── session.nix             # Session variables, PATH, nixpkgs config
-        ├── shell.nix               # Zsh, fzf, aliases
-        ├── starship.nix            # Starship prompt
-        └── tmux.nix                # Tmux
+│   └── kami.nix               # Host definition (username, homeDirectory)
+└── modules/                   # Home-manager modules
+    ├── common.nix             # Import hub
+    ├── git.nix                # Git
+    ├── ghostty.nix            # Ghostty terminal
+    ├── lang-go.nix            # Go toolchain
+    ├── lang-python.nix        # Python toolchain
+    ├── lang-typescript.nix    # TypeScript / Node.js toolchain
+    ├── nh.nix                 # Nix Helper: rebuild UX + auto GC
+    ├── nvim.nix               # Neovim
+    ├── packages.nix           # Core packages (non-language)
+    ├── pi-agent.nix           # pi coding agent
+    ├── session.nix            # Session variables, nixpkgs config
+    ├── shell.nix              # Zsh, fzf, aliases
+    ├── starship.nix           # Starship prompt
+    └── tmux.nix               # Tmux
 ```
 
 ### How the flake is structured
 
 `flake.nix` only declares inputs. The outputs are built by
 [flake-parts](https://flake.parts), which auto-imports every `.nix` file under
-`modules/flake/` via [import-tree](https://github.com/vic/import-tree).
-Adding a new host means adding a new entry in `modules/flake/home-manager.nix`
+`flake/` via [import-tree](https://github.com/vic/import-tree).
+Adding a new host means adding a new entry in `flake/home-manager.nix`
 — no need to touch `flake.nix`.
 
 ## Install

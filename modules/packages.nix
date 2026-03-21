@@ -1,61 +1,37 @@
-# Home packages
+# Core home packages (language tooling lives in lang-*.nix)
 
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
-    # TOOLING
-    bat # Replacement for cat
-    curl # good old curl
+    # SHELL TOOLING
+    bat # replacement for cat
+    curl
     (lib.lowPrio fzf) # fuzzy finder
     jq # JSON processor
-    (lib.lowPrio starship) # Fancy shell prompt
-    trash-cli # safer rm replacement
+    (lib.lowPrio starship) # shell prompt
+    trash-cli # safer rm
     ouch # zip/tar replacement
-    coreutils # Unix utilities
-    dateutils # Date utilities
+    coreutils
+    dateutils
 
     # UTILS
-    delta
+    delta # better diffs
     wget
     direnv
     gh # GitHub CLI
     jless # JSON viewer
-    ripgrep # Replacement for grep
-    fd # Replacement for find
-
-    # GOLANG
-    gopls # Golang language server
-    delve # Golang debugger
-    golangci-lint
-    air # Live reload for Go apps
-    go
-
-    # PYTHON
-    python3
-    pipx
-    ruff
-    uv
-
-    # Elixir
-    elixir
-
-    # TYPESCRIPT
-    nodePackages.typescript
-    nodePackages.vscode-langservers-extracted
-    nodePackages.typescript-language-server
-    nodePackages.eslint_d
-    nodePackages.pnpm
-    nodePackages_latest.prettier
-    nodejs
-    yarn
-    bun
-    cargo-tauri
+    ripgrep # replacement for grep
+    fd # replacement for find
 
     # NIX
-    nixd
-    nil
-    nixfmt-classic
+    nixd # Nix language server
+    nil # Nix language server (alternative)
+    nixfmt # Nix formatter
 
     # DATABASE
     postgresql
@@ -75,6 +51,7 @@
     opencode
 
     # MISC
+    elixir
     playwright
     zed-editor
     d2

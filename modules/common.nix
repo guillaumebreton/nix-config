@@ -6,6 +6,9 @@
   imports = [
     ./git.nix
     ./ghostty.nix
+    ./lang-go.nix
+    ./lang-python.nix
+    ./lang-typescript.nix
     ./nh.nix
     ./nvim.nix
     ./packages.nix
