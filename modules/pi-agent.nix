@@ -6,8 +6,7 @@ let
     version = "0.61.1";
 
     src = pkgs.fetchzip {
-      url =
-        "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.61.1.tgz";
+      url = "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.61.1.tgz";
       hash = "sha256-XhVH0WG1MqezyUnpnRgVoXnFgMRxq/6id0CSEpPCWEQ=";
     };
 
@@ -26,4 +25,7 @@ let
       mainProgram = "pi";
     };
   };
-in { home.packages = [ pi-agent ]; }
+in
+{
+  home.packages = [ pi-agent ];
+}

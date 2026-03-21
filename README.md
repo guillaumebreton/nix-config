@@ -57,6 +57,7 @@ After first activation, install the Berkeley Mono font manually.
 | Command | Description |
 |---------|-------------|
 | `switch` | Rebuild and activate (via `nh home switch`) — shows package diff |
+| `nix fmt` | Auto-format all `.nix` files with nixfmt |
 | `nix flake update` | Update all flake inputs |
 
 ## Upgrading pi

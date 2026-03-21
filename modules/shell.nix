@@ -30,8 +30,7 @@ let
     gpf = "git push --force-with-lease";
 
     # github pr
-    gpr =
-      "gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
+    gpr = "gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
 
     # go aliases
     got = "go test ./...";
@@ -72,13 +71,13 @@ let
     tp = "tp() {task $1 mod sched:tomorrow};tp";
 
   };
-in {
+in
+{
 
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
-    defaultCommand =
-      "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
+    defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
   };
 
   # zsh settings
@@ -139,15 +138,17 @@ in {
                 fi
             }
       		'';
-    plugins = [{
-      name = "zsh-nix-shell";
-      file = "nix-shell.plugin.zsh";
-      src = pkgs.fetchFromGitHub {
-        owner = "chisui";
-        repo = "zsh-nix-shell";
-        rev = "v0.4.0";
-        sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
-      };
-    }];
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.4.0";
+          sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
+        };
+      }
+    ];
   };
 }
