@@ -13,6 +13,7 @@
     ./nvim.nix
     ./packages.nix
     ./pi-agent.nix
+    ./pi-config.nix
     ./session.nix
     ./shell.nix
     ./starship.nix
