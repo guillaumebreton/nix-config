@@ -13,22 +13,39 @@ nix-config/
 │   └── treefmt.nix            # nix fmt formatter (nixfmt)
 ├── profiles/
 │   └── kami.nix               # Host definition (username, homeDirectory)
-└── modules/                   # Home-manager modules
-    ├── common.nix             # Import hub
-    ├── git.nix                # Git
-    ├── ghostty.nix            # Ghostty terminal
-    ├── lang-go.nix            # Go toolchain
-    ├── lang-python.nix        # Python toolchain
-    ├── lang-typescript.nix    # TypeScript / Node.js toolchain
-    ├── nh.nix                 # Nix Helper: rebuild UX + auto GC
-    ├── nvim.nix               # Neovim
-    ├── packages.nix           # Core packages (non-language)
-    ├── pi-agent.nix           # pi coding agent
-    ├── session.nix            # Session variables, nixpkgs config
-    ├── shell.nix              # Zsh, fzf, aliases
-    ├── starship.nix           # Starship prompt
-    └── tmux.nix               # Tmux
+├── modules/                   # Home-manager modules
+│   ├── common.nix             # Import hub
+│   ├── git.nix                # Git
+│   ├── ghostty.nix            # Ghostty terminal
+│   ├── lang-go.nix            # Go toolchain
+│   ├── lang-python.nix        # Python toolchain
+│   ├── lang-typescript.nix    # TypeScript / Node.js toolchain
+│   ├── nh.nix                 # Nix Helper: rebuild UX + auto GC
+│   ├── nvim.nix               # Neovim
+│   ├── packages.nix           # Core packages (non-language)
+│   ├── pi-agent.nix           # pi binary (buildNpmPackage)
+│   ├── pi-config.nix          # pi skills, theme, prompts, AGENTS.md
+│   ├── session.nix            # Session variables, nixpkgs config
+│   ├── shell.nix              # Zsh, fzf, aliases
+│   ├── starship.nix           # Starship prompt
+│   └── tmux.nix               # Tmux
+├── skills/                    # Pi skills → ~/.agents/skills/ (auto-discovered)
+│   ├── git-workflow/SKILL.md
+│   └── nix/SKILL.md
+└── pi/                        # Pi config assets
+    ├── AGENTS.md              # → ~/.pi/agent/AGENTS.md
+    ├── themes/
+    │   └── tokyonight.json    # → ~/.pi/agent/themes/tokyonight.json
+    └── prompts/
+        ├── commit.md          # → /review, /commit, /refactor
+        ├── review.md
+        └── refactor.md
 ```
+
+### Adding a skill
+
+Create a new directory under `skills/` with a `SKILL.md`, commit, and run `switch`.
+Pi auto-discovers everything under `~/.agents/skills/`.
 
 ### How the flake is structured
 

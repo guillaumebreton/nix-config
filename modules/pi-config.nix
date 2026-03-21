@@ -1,18 +1,28 @@
-# Pi coding agent configuration: global context, skills, and prompt templates
-# Files are symlinked into ~/.pi/agent/ on every `switch`
+# Pi coding agent configuration
+# - skills/ (repo root)  → ~/.agents/skills/   (pi reads this automatically)
+# - pi/themes/           → ~/.pi/agent/themes/
+# - pi/prompts/          → ~/.pi/agent/prompts/
+# - pi/AGENTS.md         → ~/.pi/agent/AGENTS.md
 
 { ... }:
 
 {
+  # Skills — auto-discovered by pi from ~/.agents/skills/
+  # Add a directory under skills/ in the repo, it appears here on next switch
+  home.file.".agents/skills" = {
+    source = ../skills;
+    recursive = true;
+  };
+
+  # Theme
+  home.file.".pi/agent/themes/tokyonight.json".source = ../pi/themes/tokyonight.json;
+
   # Global context — loaded at every pi startup
   home.file.".pi/agent/AGENTS.md".source = ../pi/AGENTS.md;
 
-  # Skills — auto-loaded or invoked via /skill:name
-  home.file.".pi/agent/skills/git-workflow/SKILL.md".source = ../pi/skills/git-workflow/SKILL.md;
-  home.file.".pi/agent/skills/nix/SKILL.md".source = ../pi/skills/nix/SKILL.md;
-
   # Prompt templates — invoked via /review, /commit, /refactor
-  home.file.".pi/agent/prompts/review.md".source = ../pi/prompts/review.md;
-  home.file.".pi/agent/prompts/commit.md".source = ../pi/prompts/commit.md;
-  home.file.".pi/agent/prompts/refactor.md".source = ../pi/prompts/refactor.md;
+  home.file.".pi/agent/prompts" = {
+    source = ../pi/prompts;
+    recursive = true;
+  };
 }
