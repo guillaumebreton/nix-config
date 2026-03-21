@@ -3,6 +3,7 @@ let
   # Import other Nix files
   imports = [
     ./git.nix
+    ./nh.nix
     ./shell.nix
     ./starship.nix
     ./tmux.nix
@@ -58,6 +59,7 @@ in {
     gopls # Golang language server
     delve # Golang debugger
     golangci-lint
+    air # Live reload for Go apps
     go
 
     # PYTHON

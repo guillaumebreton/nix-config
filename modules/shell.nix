@@ -42,11 +42,8 @@ let
     # Reload zsh
     reload = "source ~/.zshrc";
 
-    # Reload home manager and zsh
-    # until https://github.com/nix-community/home-manager/issues/2848 is fixed
-    # switch = "home-manager switch && source ~/.zshrc";
-    switch = ''
-      nix profile list | { grep 'home-manager-path$' || test $? = 1; } | awk -F ' ' '{ print $4 }' | cut -d ' ' -f 4 | xargs -t $DRY_RUN_CMD nix profile remove $VERBOSE_ARG &&  nix build --no-link ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage && "$(nix path-info ~/Workspaces/nix-config#homeConfigurations.$(hostname -s).activationPackage)"/activate && source ~/.zshrc'';
+    # Rebuild home-manager via nh
+    switch = "nh home switch --configuration kami ~/Workspaces/nix-config";
 
     # Nix garbage collection
     garbage = "nix-collect-garbage -d && docker image prune --force";
