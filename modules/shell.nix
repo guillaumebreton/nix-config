@@ -42,7 +42,7 @@ let
     reload = "source ~/.zshrc";
 
     # Rebuild home-manager via nh
-    switch = "nh home switch --configuration kami ~/Workspaces/nix-config";
+    switch = "nh home switch";
 
     # Nix garbage collection
     garbage = "nix-collect-garbage -d && docker image prune --force";
