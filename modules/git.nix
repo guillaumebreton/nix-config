@@ -3,8 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userName = "Guillaume Breton";
-    userEmail = "breton.gy@gmail.com";
 
     # Replaces ~/.gitignore
     ignores = [
@@ -19,30 +17,36 @@
       "npm-debug.log"
     ];
 
-    # Replaces aliases in ~/.gitconfig
-    aliases = {
-      lg = "log --graph -20 --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(bold blue)%an %Creset: %s %Cgreen(%cr)' --abbrev-commit --date=relative";
-      l = "log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(bold blue)%an %Creset: %s %Cgreen(%cr)'";
-      ll = "log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat";
-      st = "status --short";
-    };
+    settings = {
+      user = {
+        name = "Guillaume Breton";
+        email = "breton.gy@gmail.com";
+      };
 
-    # Global Git config
-    extraConfig = {
+      alias = {
+        lg = "log --graph -20 --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(bold blue)%an %Creset: %s %Cgreen(%cr)' --abbrev-commit --date=relative";
+        l = "log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(bold blue)%an %Creset: %s %Cgreen(%cr)'";
+        ll = "log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat";
+        st = "status --short";
+      };
+
       core = {
         editor = "vi";
         pager = "delta --dark";
         whitespace = "trailing-space,space-before-tab";
       };
+
       push = {
         default = "current";
-        followTags = "true";
+        followTags = true;
       };
+
       branch = {
         autosetuprebase = "always";
       };
+
       rebase = {
-        autosquash = "true";
+        autosquash = true;
       };
     };
   };
