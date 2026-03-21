@@ -1,6 +1,27 @@
-# Git settings
+# Git settings and aliases
+
+{ ... }:
 
 {
+  home.shellAliases = {
+    gs = "git switch";
+    gr = "git restore";
+    gst = "git status";
+    gcm = "git commit -m";
+    gca = "git commit --amend";
+    gp = "git push";
+    gpf = "git push --force-with-lease";
+    grh = "git reset --hard head";
+    gri = "git rebase -i";
+    grc = "git rebase --continue";
+    gaa = "git add --all";
+    gc = "git commit";
+    gco = "git checkout";
+    gcp = "git add --all && git commit && git push";
+    gcapf = "git add --all && git commit --amend && git push --force-with-lease";
+    gpr = "gh pr view --web || gh pr create -f -w -B main -H $(git rev-parse --abbrev-ref HEAD)";
+  };
+
   programs.git = {
     enable = true;
 

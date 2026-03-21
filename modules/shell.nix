@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
-let
-  # Set all shell aliases programatically
-  shellAliases = {
-    # Aliases for commonly used tools
+{
+  home.shellAliases = {
+    # Better defaults
     grep = "rg";
     diff = "diff --color=auto";
     cat = "bat";
@@ -12,54 +11,18 @@ let
     tree = "ls -T";
     rm = "trash";
 
-    # git aliases
-    gs = "git switch";
-    gr = "git restore";
-    gst = "git status";
-    gcm = "git commit -m ";
-    gca = "git commit --amend ";
-    gp = "git push";
-    grh = "git reset --hard head";
-    gri = "git rebase -i";
-    gcapf = "git add --all && gca && gpf";
-    gaa = "git add --all";
-    gc = "git commit";
-    gco = "git checkout";
-    gcp = "git add --all && gc && gp";
-    grc = "git rebase --continue";
-    gpf = "git push --force-with-lease";
-
-    # github pr
-    gpr = "gh pr view --web || gh pr create -f -w -B main -H ` git rev-parse --abbrev-ref HEAD`";
-
-    # go aliases
-    got = "go test ./...";
-    goi = "go install .";
-    gor = "go run .";
-    gob = "go build .";
-
-    # Reload zsh
-    reload = "source ~/.zshrc";
-
-    # Rebuild home-manager via nh
+    # Nix
     switch = "nh home switch";
-
-    # Nix garbage collection
     garbage = "nix-collect-garbage -d && docker image prune --force";
-
-    # See which Nix packages are installed
     installed = "nix-env --query --installed";
-
-    # Nix-shell
     ns = "nix-shell shell.nix";
 
-    # task
+    # Task
     t = "task ls";
     tw = "task week";
     tom = "task tomorrow";
     tad = ''tad() {task add "$@" sched:today};tad'';
     tat = ''tat() {task add "$@" sched:tomorrow};tat'';
-
     tm = "tm() {task mod '$@' };tm";
     tsa = "tsa() {task $1 mod seg:A};tsa";
     tsm = "tsm() {task $1 mod seg:M};tsm";
@@ -70,9 +33,9 @@ let
     tt = "tt() {task $1 mod sched:$2};tt";
     tp = "tp() {task $1 mod sched:tomorrow};tp";
 
+    # Reload zsh
+    reload = "source ~/.zshrc";
   };
-in
-{
 
   programs.fzf = {
     enable = true;
@@ -80,64 +43,58 @@ in
     defaultCommand = "${pkgs.ripgrep}/bin/rg --no-messages --files --hidden --follow --glob '!.git/*'";
   };
 
-  # zsh settings
   programs.zsh = {
-    inherit shellAliases;
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
     history.extended = true;
 
-    # Called whenever zsh is initialized
     initContent = ''
-      			export TERM="xterm-256color"
-      			export PATH="$HOME/go/bin:$PATH"
-      			bindkey -e
+      export TERM="xterm-256color"
+      bindkey -e
 
-      			# Nix setup (environment variables, etc.)
-      			if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-      				. ~/.nix-profile/etc/profile.d/nix.sh
-      			fi
+      # Nix setup (environment variables, etc.)
+      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+        . ~/.nix-profile/etc/profile.d/nix.sh
+      fi
 
-      			# Load environment variables from a file;
-      			if [ -e ~/.extras ]; then
-      				. ~/.extras
-      			 fi
+      # Load environment variables from a file
+      if [ -e ~/.extras ]; then
+        . ~/.extras
+      fi
 
-      			# Start up Starship shell
-      			eval "$(starship init zsh)"
+      # Start up Starship shell
+      eval "$(starship init zsh)"
 
-      			# direnv setup
-      			eval "$(direnv hook zsh)"
+      # direnv setup
+      eval "$(direnv hook zsh)"
 
-            # start devlopement enviroment
-            ved(){
-                # If no argument is given, list all the workspaces
-                selected=$1
-                if [ -z $1 ]; then
-                    selected=`ls ~/Workspaces/ | fzf`
-                fi
-                # ctrl-c pressed
-                if [ -z $selected ]; then
-                    return 0
-                fi
+      # Open a workspace in a tmux session
+      ved(){
+        selected=$1
+        if [ -z $1 ]; then
+          selected=`ls ~/Workspaces/ | fzf`
+        fi
+        if [ -z $selected ]; then
+          return 0
+        fi
 
-                WORKING_DIRECTORY=$(cdpath=(. ~/Workspaces) cd $selected > /dev/null 2>&1 && pwd)
-                echo "working directory: $WORKING_DIRECTORY"
+        WORKING_DIRECTORY=$(cdpath=(. ~/Workspaces) cd $selected > /dev/null 2>&1 && pwd)
+        echo "working directory: $WORKING_DIRECTORY"
 
-                # Switch session
-                session_name=`echo $selected | sed 's/\./_/g'`
-                if [ -z "$TMUX" ]; then
-                    tmux new-session -As $session_name -c $WORKING_DIRECTORY
-                else
-                    if ! tmux has-session -t $session_name 2>/dev/null; then
-                        TMUX= tmux new-session -ds $session_name -c $WORKING_DIRECTORY
-                    fi
-                    echo "switching to $session_name session"
-                    tmux switch-client -t $session_name
-                fi
-            }
-      		'';
+        session_name=`echo $selected | sed 's/\./_/g'`
+        if [ -z "$TMUX" ]; then
+          tmux new-session -As $session_name -c $WORKING_DIRECTORY
+        else
+          if ! tmux has-session -t $session_name 2>/dev/null; then
+            TMUX= tmux new-session -ds $session_name -c $WORKING_DIRECTORY
+          fi
+          echo "switching to $session_name session"
+          tmux switch-client -t $session_name
+        fi
+      }
+    '';
+
     plugins = [
       {
         name = "zsh-nix-shell";

@@ -1,8 +1,15 @@
-# Go development tools
+# Go development tools and aliases
 
 { pkgs, ... }:
 
 {
+  home.shellAliases = {
+    gor = "go run .";
+    gob = "go build .";
+    got = "go test ./...";
+    goi = "go install .";
+  };
+
   home.packages = with pkgs; [
     go
     gopls # language server
