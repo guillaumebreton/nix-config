@@ -15,6 +15,7 @@
     defaultModel = "claude-sonnet-4-6";
     defaultThinkingLevel = "medium";
     theme = "tokyonight";
+    skills = [ "~/.agents/skills" ];
   };
 
   # Skills — auto-discovered by pi from ~/.agents/skills/
