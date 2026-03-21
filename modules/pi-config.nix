@@ -1,8 +1,8 @@
 # Pi coding agent configuration
-# - skills/ (repo root)  → ~/.agents/skills/   (pi reads this automatically)
-# - pi/themes/           → ~/.pi/agent/themes/
-# - pi/prompts/          → ~/.pi/agent/prompts/
-# - pi/AGENTS.md         → ~/.pi/agent/AGENTS.md
+# - skills/ (repo root)       → ~/.agents/skills/   (pi reads this automatically)
+# - config/pi/themes/         → ~/.pi/agent/themes/
+# - config/pi/prompts/        → ~/.pi/agent/prompts/
+# - config/pi/AGENTS.md       → ~/.pi/agent/AGENTS.md
 
 { ... }:
 
@@ -15,14 +15,14 @@
   };
 
   # Theme
-  home.file.".pi/agent/themes/tokyonight.json".source = ../pi/themes/tokyonight.json;
+  home.file.".pi/agent/themes/tokyonight.json".source = ../config/pi/themes/tokyonight.json;
 
   # Global context — loaded at every pi startup
-  home.file.".pi/agent/AGENTS.md".source = ../pi/AGENTS.md;
+  home.file.".pi/agent/AGENTS.md".source = ../config/pi/AGENTS.md;
 
   # Prompt templates — invoked via /review, /commit, /refactor
   home.file.".pi/agent/prompts" = {
-    source = ../pi/prompts;
+    source = ../config/pi/prompts;
     recursive = true;
   };
 }

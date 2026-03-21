@@ -32,14 +32,17 @@ nix-config/
 ├── skills/                    # Pi skills → ~/.agents/skills/ (auto-discovered)
 │   ├── git-workflow/SKILL.md
 │   └── nix/SKILL.md
-└── pi/                        # Pi config assets
-    ├── AGENTS.md              # → ~/.pi/agent/AGENTS.md
-    ├── themes/
-    │   └── tokyonight.json    # → ~/.pi/agent/themes/tokyonight.json
-    └── prompts/
-        ├── commit.md          # → /review, /commit, /refactor
-        ├── review.md
-        └── refactor.md
+└── config/                    # App config assets
+    ├── ghostty                # Ghostty config
+    ├── nvim/                  # Neovim config
+    └── pi/                    # Pi config assets
+        ├── AGENTS.md          # → ~/.pi/agent/AGENTS.md
+        ├── themes/
+        │   └── tokyonight.json # → ~/.pi/agent/themes/tokyonight.json
+        └── prompts/
+            ├── commit.md      # → /commit
+            ├── review.md      # → /review
+            └── refactor.md    # → /refactor
 ```
 
 ### Adding a skill
