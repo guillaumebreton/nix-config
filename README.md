@@ -6,22 +6,35 @@ Home Manager configuration for macOS (aarch64-darwin).
 
 ```
 nix-config/
-├── flake.nix               # Flake inputs and homeConfigurations output
+├── flake.nix                       # Inputs only — outputs delegated to flake-parts
 ├── profiles/
-│   └── kami.nix            # Host definition (username, homeDirectory)
+│   └── kami.nix                    # Host definition (username, homeDirectory)
 └── modules/
-    ├── common.nix          # Import hub for all modules
-    ├── git.nix             # Git + gh + lazygit
-    ├── ghostty.nix         # Ghostty terminal config
-    ├── nh.nix              # Nix Helper (nh): rebuild UX + auto GC
-    ├── nvim.nix            # Neovim
-    ├── packages.nix        # home.packages (all installed tools)
-    ├── pi-agent.nix        # pi coding agent
-    ├── session.nix         # Session variables, PATH, nixpkgs config
-    ├── shell.nix           # Zsh, fzf, shell aliases
-    ├── starship.nix        # Starship prompt
-    └── tmux.nix            # Tmux
+    ├── flake/                      # Flake-level wiring (auto-imported by import-tree)
+    │   ├── systems.nix             # Supported systems
+    │   ├── home-manager.nix        # homeConfigurations output (one entry per host)
+    │   └── treefmt.nix             # nix fmt formatter (nixfmt)
+    └── (home-manager modules)
+        ├── common.nix              # Import hub for all home modules
+        ├── git.nix                 # Git
+        ├── ghostty.nix             # Ghostty terminal
+        ├── nh.nix                  # Nix Helper: rebuild UX + auto GC
+        ├── nvim.nix                # Neovim
+        ├── packages.nix            # home.packages (all installed tools)
+        ├── pi-agent.nix            # pi coding agent
+        ├── session.nix             # Session variables, PATH, nixpkgs config
+        ├── shell.nix               # Zsh, fzf, aliases
+        ├── starship.nix            # Starship prompt
+        └── tmux.nix                # Tmux
 ```
+
+### How the flake is structured
+
+`flake.nix` only declares inputs. The outputs are built by
+[flake-parts](https://flake.parts), which auto-imports every `.nix` file under
+`modules/flake/` via [import-tree](https://github.com/vic/import-tree).
+Adding a new host means adding a new entry in `modules/flake/home-manager.nix`
+— no need to touch `flake.nix`.
 
 ## Install
 
